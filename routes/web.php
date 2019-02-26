@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/listeProduits', function () {
+    return view('listeDesProduits');
+});
+
+Route::get('/panier', function () {
+    return view('panier');
+});
+
+Route::get('/ficheProduit/{id}', function ($id) {
+    return view('ficheProduit', ['id' => $id]);
+});
+
+Route::get('/accueil', function () {
+    return view('accueil');
+});
