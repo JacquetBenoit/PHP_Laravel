@@ -15,18 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/listeProduits', function () {
-    return view('listeDesProduits');
-});
+// routes avec controller
 
-Route::get('/panier', function () {
-    return view('panier');
-});
+Route::get('/accueil', 'PagesController@accueil');
 
-Route::get('/ficheProduit/{id}', function ($id) {
-    return view('ficheProduit', ['id' => $id]);
-});
+Route::get('/listeProduits', 'PagesController@listeProduits');
 
-Route::get('/accueil', function () {
-    return view('accueil');
-});
+Route::get('/panier', 'PagesController@panier');
+
+Route::get('/ficheProduit/{id}', 'PagesController@ficheProduit');
