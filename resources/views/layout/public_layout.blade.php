@@ -14,7 +14,7 @@
         
     </head>
 <header>
-    @include('menu')
+    @include('include/menu')
 </header>   
 <body>
     <div class="content">
