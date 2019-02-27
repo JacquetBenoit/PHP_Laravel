@@ -11,16 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // routes avec controller
 
-Route::get('/accueil', 'PagesController@accueil');
+Route::get('/', 'PagesController@accueil')->name('accueil');
 
-Route::get('/listeProduits', 'PagesController@listeProduits');
+Route::get('/listeProduits', 'PagesController@listeProduits')->name('listeProduits');
 
-Route::get('/panier', 'PagesController@panier');
+Route::get('/panier', 'PagesController@panier')->name('panier');
 
-Route::get('/ficheProduit/{id}', 'PagesController@ficheProduit');
+Route::get('/ficheProduit/{id}', 'PagesController@ficheProduit')->name('ficheProduit');

@@ -63,6 +63,9 @@
             }
         </style>
     </head>
+<header>
+    @include('menu')
+</header>   
 <body>
     <div class="content">
         <div class="title m-b-md">
