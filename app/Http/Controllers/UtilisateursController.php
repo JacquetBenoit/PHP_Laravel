@@ -31,6 +31,11 @@ class UtilisateursController extends Controller
         return view('frontOffice/creerCompte');
     }
 
+    public function commande()
+    {
+        return view('frontOffice/commandes');
+    }
+
 // ------------ BACK OFFICE ------------------
 
     public function gestionUtilisateurs()
