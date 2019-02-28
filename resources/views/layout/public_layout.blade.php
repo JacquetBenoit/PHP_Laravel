@@ -10,10 +10,14 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
         
     </head>
+<!-- HEADER -->
 <header>
+    <p><span>w</span></p>
+    <h1>SNEAKERS STORE</h1>
     @include('include/menu')
 </header>   
 <body>
