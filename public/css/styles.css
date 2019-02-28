@@ -48,3 +48,62 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+
+
+/* ----- STYLE CSS CHLOE ---- */
+
+@font-face {
+    font-family: 'sneakersregular';
+    src: url('fonts/sneakers/sneakers-webfont.woff2') format('woff2'),
+         url('fonts/sneakers/sneakers-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*body{
+	font-family: Helvetica,Arial,sans-serif;
+}*/
+
+/* -- HEADER -- */
+header {
+	margin: 0 0 5% 0;
+}
+h1 {
+	text-align: center;
+}
+header p{
+	text-align: center;
+}
+header p span{
+	font-family: 'sneakersregular';
+	font-size: 6em;
+	margin: auto;
+	color: slategrey;
+}
+/* -- CONTAINER DES ARTICLES -- */
+.container-articles {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 10%;
+}
+/* -- CONTAINER D'UN ARTICLE */
+.container-article {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3%;
+}
+.container-right h2 {
+	font-size: 1.5em;
+	
+}
+.container-right h2, .container-right p {
+	text-align: end;
+	
+}
+.container-left img{
+	width:40%;
+}
+
+/* ----- FIN STYLE CSS CHLOE ---- */
