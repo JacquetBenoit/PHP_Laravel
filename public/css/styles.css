@@ -107,3 +107,10 @@ header p span{
 }
 
 /* ----- FIN STYLE CSS CHLOE ---- */
+
+.imgsize {
+    display: block;
+    margin-right: auto;
+    height: 60px;
+    width: 66px; 
+}

@@ -4,5 +4,13 @@
     
 
 @section('content')
-   Liste des produits 
+
+@foreach ($articles as $art)
+   <div class="flex-center">   
+      <img src="{{$art['image']}}" alt="carotte" class="imgsize">
+      {{$art['nom']}}
+      {{$art['prix']}} €
+   </div>
+@endforeach
+
 @endsection
