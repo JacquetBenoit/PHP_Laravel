@@ -8,7 +8,25 @@ class ProduitsController extends Controller
 {
     public function listeProduits()
     {
-        return view('frontOffice/listeDesProduits');
+        $catalog = 
+	    [
+            [
+                "Name"  => "STAN SMITH PYTHON",
+                "Price" => 99.95,
+                "Photo" => "images/stan_smith_python.jpg",
+            ],
+            [
+                "Name"  => "STAN SMITH BLANC",
+                "Price" => 99.95,
+                "Photo" => "images/stan_smith_white_python.jpg",
+            ],
+            [
+                "Name"  => "STAN SMITH NOIRE",
+                "Price" => 119.95,
+                "Photo" => "images/stan_smith_new_bold.jpg",
+            ],
+        ];
+        return view('frontOffice/listeDesProduits', ['produits'=>$catalog]);
     }
 
     public function ficheProduit($id)
