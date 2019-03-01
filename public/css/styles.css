@@ -71,7 +71,7 @@ html, body {
     display: block;
     margin-right: auto;
     height: 60px;
-    width: 66px; 
+    width: 80px; 
 }
 
 .element {
@@ -99,4 +99,10 @@ html, body {
 .check {
     margin-bottom: 4%;
     margin-left: 2%;
+}
+
+.othertext{
+    font-size: 20px;
+    text-align: center;
+    margin-right: auto;
 }
