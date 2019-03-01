@@ -84,14 +84,14 @@ html, body {
     font-size: 20px;
     padding: 5%;
     border-style: solid;
-    border-color: rgb(111, 228, 126);
-    margin-bottom: 6%;
+    border-color: rgb(129, 192, 143);
+    margin-bottom: 0%;
 }
 
 .cont_elements {
     display: flex;
     flex-direction: column;
-    padding: 4% 30% 0% 30%;
+    padding: 2% 30% 0% 30%;
     margin-left: auto;
     margin-right: auto;
 }
