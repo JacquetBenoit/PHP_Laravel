@@ -2,7 +2,6 @@
 
 @section('title', 'Accueil')
     
+@section('nomDuSite', 'Sneakers Store')
 
-@section('content')
-   Accueil 
-@endsection
+@section('content', 'Accueil')

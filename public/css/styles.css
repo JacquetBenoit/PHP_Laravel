@@ -54,8 +54,8 @@ html, body {
 
 @font-face {
     font-family: 'sneakersregular';
-    src: url('fonts/sneakers/sneakers-webfont.woff2') format('woff2'),
-         url('fonts/sneakers/sneakers-webfont.woff') format('woff');
+    src: url('../fonts/sneakers/sneakers-webfont.woff2') format('woff2'),
+         url('../fonts/sneakers/sneakers-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -89,21 +89,26 @@ header p span{
 	margin: 0 10%;
 }
 /* -- CONTAINER D'UN ARTICLE */
-.container-article {
+.container-articles .container-article {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 3%;
 }
-.container-right h2 {
+.container-articles .container-article .container-right h2 {
 	font-size: 1.5em;
 	
 }
-.container-right h2, .container-right p {
+.container-articles .container-article .container-right h2, .container-right p {
 	text-align: end;
 	
 }
-.container-left img{
+.container-articles .container-article .container-left img{
 	width:40%;
 }
+/* -- CONTAINER FICHE PRODUIT */
+.container-fiche-produit .container-left img {
+    width:150% !important;
+}
+
 
 /* ----- FIN STYLE CSS CHLOE ---- */

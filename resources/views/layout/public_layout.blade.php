@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="{{asset('css/resetCSS.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
         
@@ -21,9 +22,8 @@
     @include('include/menu')
 </header>   
 <body>
-    <div class="content">
-        <div class="title m-b-md">
-          @yield('content')
-        </div>
+    <div class="full-height">      
+        @yield('content')
+    </div>
 </body>
 </html>
