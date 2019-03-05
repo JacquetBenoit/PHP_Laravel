@@ -102,9 +102,7 @@ header p span{
 	text-align: end;
 	
 }
-.container-articles .container-article .container-left img{
-	width:40%;
-}
+
 /* -- CONTAINER FICHE PRODUIT */
 .container-fiche-produit .container-left img {
     width:150% !important;
@@ -112,3 +110,10 @@ header p span{
 
 
 /* ----- FIN STYLE CSS CHLOE ---- */
+
+.image {
+    display: block;
+    margin-right: auto;
+    height: 60px;
+    width: 66px; 
+}

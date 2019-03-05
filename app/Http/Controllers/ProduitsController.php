@@ -3,35 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProduitsController extends Controller
 {
-    private $catalog = 
-    [
-        "STAN SMITH PYTHON" => [
-            "Name"  => "STAN SMITH PYTHON",
-            "Price" => 99.95,
-            "Photo" => "images/stan_smith_python.jpg",
-        ],
-        "STAN SMITH BLANC" => [
-            "Name"  => "STAN SMITH BLANC",
-            "Price" => 99.95,
-            "Photo" => "images/stan_smith_white_python.jpg",
-        ],
-        "STAN SMITH NOIRE" => [
-            "Name"  => "STAN SMITH NOIRE",
-            "Price" => 119.95,
-            "Photo" => "images/stan_smith_new_bold.jpg",
-        ],
-    ];
+   
     public function listeProduits()
     {
-        return view('frontOffice/listeDesProduits', ['produits'=>$this->catalog]);
+        $products = DB::select('select * from products');
+
+        return view('frontOffice/listeDesProduits', ['products' => $products]);
     }
 
     public function ficheProduit($id)
     {
-        return view('frontOffice/ficheProduit', ['id' => $id, 'article'=>$this->catalog[$id]]);
+        $products = DB::select('select * from products where NAME = ?', [$id]);
+
+        return view('frontOffice/ficheProduit', ['products'=>$products[0]]);
     }
 
 // ------------ BACK OFFICE ------------------

@@ -6,20 +6,21 @@
 @section('content')
 {{-- Fiche produit {{ $id }} --}}
 <div class="container-articles">
-    <div class="container-article container-fiche-produit">
+    <div class="container-article">
 
         <!-- Affiche l'image de l'article -->
         <div class="container-left">       		
-           <img src="{{asset($article['Photo'])}}" alt = "Stan Smith">
+            <img src="{{$products->IMAGE}}" alt="vegetables-images" class="image">
+            {{$products->DESCRIPTION}}
         </div>
         
         <div class="container-right">
            <!-- Affiche le nom et le prix de l'article -->
-            <h2>{{$article["Name"] ."\n"}}</h2>
-            <p>{{$article["Price"] . " €"}}</p>
+            <h2>{{$products->NAME}}</h2>
+            <p>{{$products->PRICE}}cents</p>
            
            <!-- Quantité -->
-           <input type="number" name="quantity[{{$article['Name']}}]" value="1" min="0" max="10" required/>
+           <input type="number" name="" value="1" min="0" max="10" required/>
 
            <!-- Case à cocher -->
            <label for="case">Ajouter au panier</label>
