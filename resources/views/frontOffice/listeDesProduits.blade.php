@@ -6,6 +6,7 @@
       <!-- CONTAINER ARTICLES -->
       <div class="container-articles">
          <h2>Catalogue</h2>
+          @dump($produits);
          <!-- Formulaire appelle le programme panier.php pour lui soumettre les cases cochées -->
             <form method = "POST" action = "panier.php"> 
 
@@ -17,17 +18,17 @@
 
                      <!-- Affiche l'image de l'article -->
                      <div class="container-left">       		
-                     <a href="{{route('ficheProduit',['id'=>$produit['Name']])}}">
-                        <img src="{{asset($produit['Photo'])}}" alt = "Stan Smith">
+                     <a href="{{route('ficheProduit',['id'=>$produit->id_produit])}}">
+                        <img src="{{asset($produit->image)}}" alt = "Stan Smith">
                      </a>
                      </div>
                      
                      <div class="container-right">
                         <!-- Affiche le nom et le prix de l'article -->
-                        <a href="{{route('ficheProduit',['id'=>$produit['Name']])}}">
-                           <h2>{{$produit["Name"] ."\n"}}</h2>
-                        </a>
-                        <p>{{$produit["Price"] . " €"}}</p>
+                        {{--<a href="{{route('ficheProduit',['id'=>$produit['Name']])}}">--}}
+                           <h2>{{$produit->nom ."\n"}}</h2>
+                        {{--</a>--}}
+                        <p>{{$produit->prix . " €"}}</p>
                         
                         <!-- Quantité -->
                         <input type="number" name="quantity[{{$key}}]" value="1" min="0" max="10" required/>
