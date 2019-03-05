@@ -10,14 +10,14 @@
 
         <!-- Affiche l'image de l'article -->
         <div class="container-left">       		
-            <img src="{{$products->IMAGE}}" alt="vegetables-images" class="image">
-            {{$products->DESCRIPTION}}
+            <img src="{{$product->IMAGE}}" alt="vegetables-images" class="image">
+            {{$product->DESCRIPTION}}
         </div>
         
         <div class="container-right">
            <!-- Affiche le nom et le prix de l'article -->
-            <h2>{{$products->NAME}}</h2>
-            <p>{{$products->PRICE}}cents</p>
+            <h2>{{$product->NAME}}</h2>
+            <p>{{$product->PRICE}}cents</p>
            
            <!-- Quantité -->
            <input type="number" name="" value="1" min="0" max="10" required/>
@@ -30,4 +30,3 @@
 </div>
 
 @endsection
-    

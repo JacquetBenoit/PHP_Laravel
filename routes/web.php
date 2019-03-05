@@ -19,7 +19,7 @@
 
 Route::get('/', 'StatiquesController@accueil')->name('accueil');
 
-Route::get('/listeProduits', 'ProduitsController@listeProduits')->name('listeProduits');
+Route::get('/listeProduits/{check}', 'ProduitsController@listeProduits')->name('listeProduits');
 
 Route::get('/panier', 'UtilisateursController@panier')->name('panier');
 
@@ -36,6 +36,8 @@ Route::get('/mon-compte', 'UtilisateursController@monCompte')->name('monCompte')
 Route::get('/creer-compte', 'UtilisateursController@creerCompte')->name('creerCompte');
 
 Route::get('/infos', 'StatiquesController@infos')->name('infos');
+
+//Route::get('/listeProduits', 'ProduitsController@listeTest')->name('listeProduits');
 
 
 
