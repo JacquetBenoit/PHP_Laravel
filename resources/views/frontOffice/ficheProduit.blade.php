@@ -1,5 +1,4 @@
 @extends('layout/public_layout')
-{{-- @dump($produit) --}}
 
 @section('title', 'Fiche produit')
 
