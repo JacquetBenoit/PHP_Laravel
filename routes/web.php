@@ -50,3 +50,13 @@ Route::get('/gestions-promos', 'ProduitsController@gestionPromos')->name('gestio
 Route::get('/gestions-utilisateurs', 'UtilisateursController@gestionUtilisateurs')->name('gestionUtilisateurs');
 
 Route::get('/gestions-commandes', 'UtilisateursController@gestionCommandes')->name('gestionCommandes');
+
+Route::get('/ajout-produit', 'ProduitsController@ajoutProduit')->name('ajoutProduit');
+
+route::post('/store', 'ProduitsController@store');
+
+route::get('/gestions-produits/{id}/delete', 'ProduitsController@delete')->name('deleteProduit');
+
+route::delete('/gestion-produits/{id}/delete', 'ProduitsController@destroy')->name('destroyProduit');
+
+route::get('/edition-produit/{id}', 'ProduitsController@update')->name('updateProduit');

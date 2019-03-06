@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') - Admin</title>
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
 </head>
 <header>
     @include('include/admin_menu')
@@ -16,8 +17,8 @@
             @yield('content')
         </p> 
     </div>  
-    <div>
-        @yield('tableau')
+    <div class="container">
+        @yield('content-two')
     </div>
 </body>
 

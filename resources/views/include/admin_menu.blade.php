@@ -5,10 +5,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="{{route('gestionCommandes')}}">gestion commandes</a>
-            <a class="nav-item nav-link" href="{{route('gestionUtilisateurs')}}">gestion utilisateurs</a>
-            <a class="nav-item nav-link" href="{{route('gestionPromos')}}">gestion promos</a>
-            <a class="nav-item nav-link" href="{{route('gestionProduits')}}">gestion produits</a>
+            <a class="nav-item nav-link" href="{{route('gestionCommandes')}}">commandes</a>
+            <a class="nav-item nav-link" href="{{route('gestionUtilisateurs')}}">utilisateurs</a>
+            <a class="nav-item nav-link" href="{{route('gestionPromos')}}">promos</a>
+            <a class="nav-item nav-link" href="{{route('gestionProduits')}}">produits</a>
           </div>
         </div>
       </nav>

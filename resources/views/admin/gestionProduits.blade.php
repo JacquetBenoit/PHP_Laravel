@@ -6,34 +6,31 @@
     Gestion des produits
 @endsection
 
-@section('tableau')
-<table class="table table-hover table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">nom</th>
-            <th scope="col">categorie</th>
-            <th scope="col">quantitée</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>exemple</td>
-            <td>chaussure</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>exemple2</td>
-            <td>chaussure</td>
-            <td>64</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">exemple3</td>
-            <td>53</td>
-          </tr>
-        </tbody>
-      </table>
+@section('content-two')
+<div class="d-flex justify-content-center">
+  <a class="btn btn-light" href="{{route('ajoutProduit')}}">AJOUTER UN PRODUIT</a>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">IMAGE</th>
+        <th scope="col">NAME</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">STOCK</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+@foreach ($products as $product)   
+        <tr>
+          <td><img src="{{$product->IMAGE}}" alt="vegetables-images" class="image"></td>
+          <td>{{$product->NAME}}</td>
+          <td>{{$product->PRICE}}cents</td>
+          <td>{{$product->STOCK}}</td>
+          <td><a href="{{route('deleteProduit',['id'=>$product->id_PRODUCT])}}" class="btn btn-light" name="delete">DELETE</a>
+          <a href="{{route('updateProduit', ['id'=>$product->id_PRODUCT])}}" class="btn btn-light" name="update">UPDATE</a></td>
+        </tr>       
+@endforeach
+    </tbody>
+</table>
 @endsection
