@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'sneakersregular';
+    src: url('../fonts/sneakers/sneakers-webfont.woff2') format('woff2'),
+    url('../fonts/sneakers/sneakers-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.navbar-brand span {
+    font-family: 'sneakersregular';
+    font-size: 2em;
+    margin: auto;
+    color: white;
+    margin-right: 4%;
+}
+.sidebar {
+    padding-top: 5%;
+}
+
+.titleSection {
+    margin: 9% 0 3% 0;
+}
