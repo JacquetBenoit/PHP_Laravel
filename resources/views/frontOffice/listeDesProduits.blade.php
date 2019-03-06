@@ -13,8 +13,9 @@
                   Trier par
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Nom</a>
-                  <a class="dropdown-item" href="#">Prix</a>
+                  <a class="dropdown-item" href="{{route('listeProduitsTrie', ['type'=> "nom"])}}">Nom</a>
+                  <a class="dropdown-item" href="{{route('listeProduitsTrie', ['type'=> "prixAsc"])}}">Prix Croissant</a>
+                  <a class="dropdown-item" href="{{route('listeProduitsTrie', ['type'=> "prixDesc"])}}">Prix Décroissant</a>
               </div>
           </div>
 

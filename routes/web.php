@@ -20,6 +20,7 @@
 Route::get('/', 'StatiquesController@accueil')->name('accueil');
 
 Route::get('/listeProduits', 'ProduitsController@listeProduits')->name('listeProduits');
+Route::get('/listeProduits/trie/{type}', 'ProduitsController@listeProduitsTrie')->name('listeProduitsTrie');
 
 Route::get('/panier', 'UtilisateursController@panier')->name('panier');
 
