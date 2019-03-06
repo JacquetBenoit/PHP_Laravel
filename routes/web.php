@@ -43,6 +43,7 @@ Route::get('/infos', 'StatiquesController@infos')->name('infos');
 /* ---------------------BACK OFFICE------------------------*/
 
 Route::get('/gestions-produits', 'ProduitsController@gestionProduits')->name('gestionProduits');
+Route::get('/gestions-produits/ajouter-produit', 'ProduitsController@ajouterProduit')->name('gestionProduitsAjouter');
 
 Route::get('/gestions-promos', 'ProduitsController@gestionPromos')->name('gestionPromos');
 
