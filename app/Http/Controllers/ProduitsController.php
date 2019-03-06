@@ -12,7 +12,7 @@ class ProduitsController extends Controller
     public function listeProduits()
     {
         //$produits = DB::select('select * from produit');
-            $produits = Produit::all()->sortBy('nom');
+        $produits = Produit::all();
         return view('frontOffice/listeDesProduits', ['produits' => $produits]);
     }
 
@@ -36,11 +36,18 @@ class ProduitsController extends Controller
         return view('frontOffice/ficheProduit', ['produit' => $produit]);
     }
 
+
+
     // ------------ BACK OFFICE ------------------
 
     public function gestionProduits()
     {
-        return view('admin/gestionProduits');
+        $produits = Produit::all();
+        return view('admin/gestionProduits', ['produits' => $produits]);
+    }
+    public function ajouterProduit()
+    {
+        return view('admin/ajouterProduit');
     }
 
     public function gestionPromos()
