@@ -72,14 +72,20 @@ header {
 h1 {
 	text-align: center;
 }
-header p{
+header  {
 	text-align: center;
 }
-header p span{
+header p span {
 	font-family: 'sneakersregular';
 	font-size: 6em;
 	margin: auto;
 	color: slategrey;
+}
+/* -- BOUTON DEROULANT -- */
+.dropdown {
+    text-align: right;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 /* -- CONTAINER DES ARTICLES -- */
 .container-articles {
@@ -102,7 +108,7 @@ header p span{
 	text-align: end;
 	
 }
-.container-articles .container-article .container-left img{
+.container-articles .container-article .container-left img {
 	width:40%;
 }
 /* -- CONTAINER FICHE PRODUIT */
