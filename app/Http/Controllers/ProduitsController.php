@@ -6,7 +6,6 @@ use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Produit;
-use Psr\Log\NullLogger;
 
 class ProduitsController extends Controller
 {
