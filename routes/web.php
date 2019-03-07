@@ -42,9 +42,21 @@ Route::get('/infos', 'StatiquesController@infos')->name('infos');
 
 /* ---------------------BACK OFFICE------------------------*/
 
+/* -- GESTION DES PRODUITS --*/
 Route::get('/gestions-produits', 'ProduitsController@gestionProduits')->name('gestionProduits');
+
+/* -- Ajouter un produit --*/
 Route::get('/gestions-produits/ajouter-produit', 'ProduitsController@ajouterProduit')->name('gestionProduitsAjouter');
 Route::post('/gestions-produits/', 'ProduitsController@storeAjoutProduit');
+
+/* -- Modifier un produit --*/
+Route::get('/gestions-produits/modifier-produit/{id}', 'ProduitsController@modifierProduit')->name('gestionProduitsModifier');
+Route::post('/gestions-produits/', 'ProduitsController@updateModifierProduit');
+
+/* -- Modifier un produit --*/
+Route::get('/gestions-produits/supprimer-produit/{id}', 'ProduitsController@deleteProduit')->name('gestionProduitsDelete');
+Route::delete('/gestions-produits/', 'ProduitsController@deleteProduit');
+
 
 Route::get('/gestions-promos', 'ProduitsController@gestionPromos')->name('gestionPromos');
 
