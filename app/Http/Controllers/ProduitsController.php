@@ -6,6 +6,7 @@ use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Produit;
+use Psr\Log\NullLogger;
 
 class ProduitsController extends Controller
 {
@@ -41,11 +42,13 @@ class ProduitsController extends Controller
 
     // ------------ BACK OFFICE ------------------
 
+    // GESTION DES PRODUITS
     public function gestionProduits()
     {
         $produits = Produit::all();
         return view('admin/gestionProduits', ['produits' => $produits]);
     }
+    // Ajouter un produit
     public function ajouterProduit()
     {
         return view('admin/ajouterProduit');
@@ -55,6 +58,26 @@ class ProduitsController extends Controller
         Produit::create($request->all());
         return redirect(route('gestionProduits'));
     }
+    // Modifier un produit
+    public function modifierProduit($id)
+    {
+        $produit = Produit::where('id', $id)->firstOrFail();
+        return view('admin/modifierProduit', ['produit' => $produit]);
+    }
+    public function updateModifierProduit(Request $request)
+    {
+        Produit::updateOrCreate (['id' => $request->input('id')], $request->all());
+        return redirect(route('gestionProduits'));
+    }
+    // Supprimer un produit
+    public function deleteProduit($id)
+    {
+        Produit::destroy($id);
+        return redirect(route('gestionProduits'));
+    }
+
+
+    // GESTION DES PROMOS
     public function gestionPromos()
     {
         return view('admin/gestionDesPromos');
