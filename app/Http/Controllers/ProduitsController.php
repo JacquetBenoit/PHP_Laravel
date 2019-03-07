@@ -48,7 +48,6 @@ class ProduitsController extends Controller
     }
     public function ajouterProduit()
     {
-        //$produit = Produit::all();
         return view('admin/ajouterProduit');
     }
     public function storeAjoutProduit(Request $request)
