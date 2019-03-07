@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Produit;
@@ -47,12 +48,16 @@ class ProduitsController extends Controller
     }
     public function ajouterProduit()
     {
+        //$produit = Produit::all();
         return view('admin/ajouterProduit');
     }
-
+    public function storeAjoutProduit(Request $request)
+    {
+        Produit::create($request->all());
+        return redirect(route('gestionProduits'));
+    }
     public function gestionPromos()
     {
         return view('admin/gestionDesPromos');
     }
-
 }
