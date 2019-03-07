@@ -12,4 +12,19 @@ class Product extends Model
 
     protected $fillable = ['DESCRIPTION', 'id_CATEGORY', 'id_PROMOTION', 'IMAGE', 'NAME', 'PRICE', 'STOCK','WEIGHT'];
 
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'id_CATEGORY', 'id_CATEGORY');
+    }
+
+    public function promotion()
+    {
+        return $this->belongsTo('App\Promotion', 'id_PROMOTION', 'id_PROMOTION');
+    }
+
+    public function command_ligne()
+    {
+        return $this->belongsTo('App\Command_ligne', 'id_PRODUCT', 'id_PRODUCT');
+    }
 }
