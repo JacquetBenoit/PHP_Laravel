@@ -6,9 +6,9 @@
     {{-- TABLEAU DES PRODUITS --}}
 @section('titleSection', 'Produits')
 
-    <a href="{{route('gestionProduitsAjouter')}}" type="button" class="btn btn-secondary">Ajouter un produit</a>
+    <a href="{{route('gestionProduitsAjouter')}}" type="button" class="btn btn-light">Ajouter un produit</a>
 
-        <table class="table table-hover table-dark">
+        <table class="table table-hover table-hover table-striped table-dark table-responsive">
             <thead>
                 <tr>
                     <th scope="col">#</th>
