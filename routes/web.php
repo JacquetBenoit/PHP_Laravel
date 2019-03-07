@@ -44,6 +44,7 @@ Route::get('/infos', 'StatiquesController@infos')->name('infos');
 
 Route::get('/gestions-produits', 'ProduitsController@gestionProduits')->name('gestionProduits');
 Route::get('/gestions-produits/ajouter-produit', 'ProduitsController@ajouterProduit')->name('gestionProduitsAjouter');
+Route::post('/gestions-produits/', 'ProduitsController@storeAjoutProduit');
 
 Route::get('/gestions-promos', 'ProduitsController@gestionPromos')->name('gestionPromos');
 
