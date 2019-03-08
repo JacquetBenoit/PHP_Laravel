@@ -22,4 +22,9 @@ class Command extends Model
     {
         return $this->belongsTo('App\Customer', 'id_CUSTOMER', 'id_CUSTOMER');
     }
+
+    public function products()
+    {
+        return $this->belongsToMany('App\product', 'command_ligne', 'id_PRODUCT', 'id_ORDER', 'id_ORDER', 'id_PRODUCT');
+    }
 }

@@ -18,8 +18,8 @@ class Command_ligne extends Model
         return $this->belongsTo('App\Command', 'id_ORDER', 'id_ORDER');
     }
 
-    public function products()
+    public function product()
     {
-        return $this->hasMany('App\product', 'id_PRODUCT', 'id_PRODUCT');
+        return $this->belongsTo('App\product', 'id_PRODUCT', 'id_PRODUCT');
     }
 }
