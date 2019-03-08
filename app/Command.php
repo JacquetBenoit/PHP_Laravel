@@ -13,13 +13,14 @@ class Command extends Model
     protected $table = 'command';
 
 
-    public function command_lignes()
+    public function product()
     {
-        return $this->hasMany('App\Command_ligne', 'id_ORDER', 'id_ORDER');
+        return $this->belongsToMany('App\product', 'command_ligne', 'id_PRODUCT', 'id_ORDER', 'id_ORDER', 'id_PRODUCT');
     }
 
     public function customer()
     {
         return $this->belongsTo('App\Customer', 'id_CUSTOMER', 'id_CUSTOMER');
     }
+
 }

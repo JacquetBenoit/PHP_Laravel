@@ -23,8 +23,10 @@ class Product extends Model
         return $this->belongsTo('App\Promotion', 'id_PROMOTION', 'id_PROMOTION');
     }
 
-    public function command_ligne()
+    public function command()
     {
-        return $this->belongsTo('App\Command_ligne', 'id_PRODUCT', 'id_PRODUCT');
+        return $this->belongsToMany('App\Command','command_ligne', 'id_ORDER', 'id_PRODUCT', 'id_PRODUCT','id_ORDER');
     }
+
+
 }

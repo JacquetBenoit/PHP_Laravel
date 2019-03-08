@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Command;
+use App\Command_ligne;
+use App\product;
 
 class UtilisateursController extends Controller
 {
@@ -45,6 +48,16 @@ class UtilisateursController extends Controller
 
     public function gestionCommandes()
     {
-        return view('admin/gestionDesCommandes');
+        $command = Command::all()
+            ->sortBy('id_ORDER');
+
+        $command_ligne = Command_ligne::all();
+
+        $products = product::all();
+
+        return view(
+            'admin/gestionDesCommandes',
+            ['commands' => $command, 'commands_ligne' => $command_ligne, 'Produits' => $products]);
+
     }
 }
