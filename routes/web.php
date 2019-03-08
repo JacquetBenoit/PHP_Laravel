@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UtilisateursController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,10 +55,20 @@ Route::get('/gestions-commandes', 'UtilisateursController@gestionCommandes')->na
 
 Route::get('/ajout-produit', 'ProduitsController@ajoutProduit')->name('ajoutProduit');
 
+Route::get('/ajout-utilisateur', 'UtilisateursController@ajoutUtilisateur')->name('ajoutUtilisateur');
+
 route::post('/store', 'ProduitsController@store');
+
+route::post('/store-utilisateur', 'UtilisateursController@store');
 
 route::get('/gestions-produits/{id}/delete', 'ProduitsController@delete')->name('deleteProduit');
 
 route::delete('/gestion-produits/{id}/delete', 'ProduitsController@destroy')->name('destroyProduit');
 
+route::get('/gestions-utilisateurs/{id}/delete', 'UtilisateursController@delete')->name('deleteUtilisateur');
+
+route::delete('/gestion-utilisateurs/{id}/delete', 'UtilisateursController@destroy')->name('destroyUtilisateur');
+
 route::get('/edition-produit/{id}', 'ProduitsController@update')->name('updateProduit');
+
+route::get('/edition-utilisateur/{id}', 'UtilisateursController@update')->name('updateUtilisateur');
