@@ -53,7 +53,7 @@ Route::post('/gestions-produits/', 'ProduitsController@storeAjoutProduit');
 Route::get('/gestions-produits/modifier-produit/{id}', 'ProduitsController@modifierProduit')->name('gestionProduitsModifier');
 Route::post('/gestions-produits/', 'ProduitsController@updateModifierProduit');
 
-/* -- Modifier un produit --*/
+/* -- Supprimer un produit --*/
 Route::get('/gestions-produits/supprimer-produit/{id}', 'ProduitsController@deleteProduit')->name('gestionProduitsDelete');
 Route::delete('/gestions-produits/', 'ProduitsController@deleteProduit');
 
