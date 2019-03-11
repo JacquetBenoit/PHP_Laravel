@@ -50,14 +50,31 @@ class UtilisateursController extends Controller
     {
         $command = Command::all()
             ->sortBy('id_ORDER');
+        //dd($command);
 
         $command_ligne = Command_ligne::all();
 
-        $products = product::all();
+
 
         return view(
             'admin/gestionDesCommandes',
-            ['commands' => $command, 'commands_ligne' => $command_ligne, 'Produits' => $products]);
+            ['commands' => $command, 'commands_ligne' => $command_ligne]);
+
+    }
+
+    public function gestionCommande(request $request)
+    {
+        $command = Command::all()
+            ->sortBy('id_ORDER');
+        //dd($command);
+
+        $command_ligne = Command_ligne::all();
+
+        $idCommand = $request['id'];
+
+        return view(
+            'admin/gestionDesCommandes',
+            ['commands' => $command, 'commands_ligne' => $command_ligne, 'id' => $idCommand]);
 
     }
 }

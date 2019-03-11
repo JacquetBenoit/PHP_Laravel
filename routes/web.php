@@ -50,6 +50,7 @@ Route::get('/gestions-promos', 'ProduitsController@gestionPromos')->name('gestio
 Route::get('/gestions-utilisateurs', 'UtilisateursController@gestionUtilisateurs')->name('gestionUtilisateurs');
 
 Route::get('/gestions-commandes', 'UtilisateursController@gestionCommandes')->name('gestionCommandes');
+Route::post('/gestions-commandes', 'UtilisateursController@gestionCommande')->name('gestionProduit');
 
 Route::get('/ajout-produit', 'ProduitsController@ajoutProduit')->name('ajoutProduit');
 

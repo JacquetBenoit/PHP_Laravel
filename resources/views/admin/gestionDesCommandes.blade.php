@@ -8,7 +8,8 @@
 @endsection
 
 @section('content-two')
-{{--    @dump($commands)--}}
+{{--    {{$id}}--}}
+
 <table class="table table-hover table-dark">
         <thead>
           <tr>
@@ -21,31 +22,45 @@
         <body>
 
               @foreach($commands as $command)
+                  @if($command["id_ORDER"] == $id)
+                      {{"Client : " . $command->customer->NAME}}
+                      <h2>{{"Commande num : " . $command["id_ORDER"]}}</h2>
+                      @foreach($command->product as $produit)
+                          {{"Articles commandés : " . $produit['NAME']}}
+                          @foreach($commands_ligne as $commandLigne)
+                              @if($commandLigne['id_PRODUCT'] == $produit->id_PRODUCT && $commandLigne['id_ORDER'] == $command->id_ORDER)
+                                  {{"Quantité : " . $commandLigne['QUANTITY']}}
+                              @endif
+                          @endforeach
+                          <br>
+                        @endforeach
+
+                  @endif
+
           <tr>
                   <th scope="row">{{$command["id_ORDER"]}}</th>
                   <td>{{$command->customer->NAME}}</td>
                   <td>
+                      @php $prixTotal = 0; @endphp
+                      @foreach($command->product as $produit)
+                        {{"Prix de l'article : " . $produit['PRICE']}}
                           @foreach($commands_ligne as $commandLigne)
-                              @if($commandLigne['id_ORDER'] == $command->id_ORDER)
+                              @if($commandLigne['id_PRODUCT'] == $produit->id_PRODUCT && $commandLigne['id_ORDER'] == $command->id_ORDER)
                                   {{"Quantité : " . $commandLigne['QUANTITY']}}
-                                  {{"ID du produit : " . $commandLigne['id_PRODUCT']}}
-                                  @foreach($Produits as $produit)
-                                      @php $prixTotal @endphp
-                                      @if($produit['id_PRODUCT'] == $commandLigne['id_PRODUCT'])
-                                      {{"Prix de l'article : " . $produit['PRICE']}}
-                                      {{"Prix de l'article : " . $produit['PRICE'] * $commandLigne['QUANTITY']}}
-                                      @php $prixTotal += $produit['PRICE'] * $commandLigne['QUANTITY'] @endphp
-                                      @endif
-                                  @endforeach
-                                  <br>
+                                  @php
+                                       $prixTotal += $commandLigne['QUANTITY'] * $produit['PRICE'];
+                                  @endphp
                               @endif
                           @endforeach
+                          <br>
+                      @endforeach
+                      {{"Prix total : " . $prixTotal}}
                   </td>
 
                   <td>
-                      <form>
+                      <form action="{{route('gestionProduit')}}" method="POST" >
                           {{ csrf_field() }}
-                          <input type="hidden" value="{{$command["id_ORDER"]}}">
+                          <input type="hidden" value="{{$command["id_ORDER"]}}" name="id">
                           <input type="submit" value="Voir commande">
                       </form>
 
@@ -57,22 +72,6 @@
           </tr>
 
               @endforeach
-            {{--<th scope="row">1</th>--}}
-            {{--<td>Chloé</td>--}}
-            {{--<td>100€</td>--}}
-            {{--<td>Lien</td>--}}
-          {{--</tr>--}}
-          {{--<tr>--}}
-            {{--<th scope="row">2</th>--}}
-            {{--<td>150€</td>--}}
-            {{--<td>100€</td>--}}
-            {{--<td>85€</td>--}}
-          {{--</tr>--}}
-          {{--<tr>--}}
-            {{--<th scope="row">3</th>--}}
-            {{--<td colspan="2">exemple3</td>--}}
-            {{--<td>@salut</td>--}}
-
         </body>
       </table>
 @endsection
