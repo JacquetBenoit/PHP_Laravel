@@ -66,11 +66,47 @@ class UtilisateursController extends Controller
     {
         $command = Command::all()
             ->sortBy('id_ORDER');
-        //dd($command);
 
         $command_ligne = Command_ligne::all();
 
         $idCommand = $request['id'];
+
+        return view(
+            'admin/gestionDesCommandes',
+            ['commands' => $command, 'commands_ligne' => $command_ligne, 'id' => $idCommand]);
+
+    }
+
+    public function deleteCommande(request $request)
+    {
+        $commandelete = Command::where('id_ORDER', $request['idDelete']);
+        $commandelete -> delete();
+
+        $commanProddelete = Command_ligne::where('id_ORDER', $request['idDelete']);
+        $commanProddelete -> delete();
+
+        $command = Command::all()
+            ->sortBy('id_ORDER');
+        $command_ligne = Command_ligne::all();
+
+        return view(
+            'admin/gestionDesCommandes',
+            ['commands' => $command, 'commands_ligne' => $command_ligne]);
+
+    }
+
+    public function confirmCommande(request $request)
+    {
+        Command::where('id_ORDER', $request['id'])
+            ->update(['LIVRAISON_DATE' => date('Y-m-d')]);
+
+        $command = Command::all()
+            ->sortBy('id_ORDER');
+
+        $command_ligne = Command_ligne::all();
+
+        $idCommand = $request['id'];
+//
 
         return view(
             'admin/gestionDesCommandes',

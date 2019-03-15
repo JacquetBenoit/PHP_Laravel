@@ -1,4 +1,8 @@
+
+<a href="{{ route('login') }}">Login</a>
+
 <?php
+
 
 /**
  * Laravel - A PHP Framework For Web Artisans
