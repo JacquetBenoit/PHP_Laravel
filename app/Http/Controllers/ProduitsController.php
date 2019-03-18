@@ -33,6 +33,16 @@ class ProduitsController extends Controller
         return view('frontOffice/ficheProduit', ['product'=>$product]);
     }
 
+    public function storePanier(Request $request)
+    {
+        
+         $product = Product::find($request->id);
+         //$request->session()->flush();
+         $request->session()->put('product.' .$request->id, ['product'=>$product, 'quantity'=>$request->quantity]);
+         return redirect(route('panier'));
+    }
+
+
 // ------------ BACK OFFICE ------------------
 
     public function gestionProduits()

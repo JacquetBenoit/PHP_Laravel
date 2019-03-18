@@ -39,6 +39,8 @@ Route::get('/creer-compte', 'UtilisateursController@creerCompte')->name('creerCo
 
 Route::get('/infos', 'StatiquesController@infos')->name('infos');
 
+route::post('/store-panier/{id}', 'produitsController@storePanier')->name('store-panier');
+
 //Route::get('/listeProduits', 'ProduitsController@listeTest')->name('listeProduits');
 
 

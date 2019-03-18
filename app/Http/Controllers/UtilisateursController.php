@@ -7,9 +7,12 @@ use App\Customer;
 
 class UtilisateursController extends Controller
 {
-    public function panier()
+    public function panier(Request $request)
     {
-        return view('frontOffice/panier');
+        $data = $request->session()->all();
+        return view('frontOffice/panier', ['data'=>$data['product']]);
+    
+         
     }
 
     public function coordonnees()
