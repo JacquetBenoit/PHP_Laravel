@@ -41,6 +41,10 @@ Route::get('/infos', 'StatiquesController@infos')->name('infos');
 
 route::post('/store-panier/{id}', 'produitsController@storePanier')->name('store-panier');
 
+route::post('/delete-panier-article/{id}', 'produitsController@deletePanierItem')->name('delete-panier-item');
+
+route::post('/delete-panier', 'produitsController@deletePanier')->name('delete-panier');
+
 //Route::get('/listeProduits', 'ProduitsController@listeTest')->name('listeProduits');
 
 

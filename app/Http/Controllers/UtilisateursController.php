@@ -9,10 +9,8 @@ class UtilisateursController extends Controller
 {
     public function panier(Request $request)
     {
-        $data = $request->session()->all();
-        return view('frontOffice/panier', ['data'=>$data['product']]);
-    
-         
+        $data = $request->session()->get('product', []);
+        return view('frontOffice/panier', ['data'=>$data]);
     }
 
     public function coordonnees()
