@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Product;
 use Illuminate\Support\Facades\Request as IlluminateRequest;
+use App\Command;
 
 class ProduitsController extends Controller
 {
@@ -52,6 +53,28 @@ class ProduitsController extends Controller
     {
         $request->session()->flush();
         return redirect(route('panier'));
+    }
+
+    public function modifier_qte(Request $request)
+    {
+        $product = Product::find($request->id);
+        $request->session()->put('product.' .$request->id, ['product'=>$product, 'quantity'=>$request->quantity]);
+        return redirect(route('panier'));
+    }
+
+    public function commander(Request $request)
+    {
+        $command = new Command();
+        $command->COMMAND_DATE = new \DateTime();
+        $command->save();
+
+        foreach ($request->session()->get('product', []) as $product)
+        {
+            // dd($product);
+            $command->products()->attach($product['product'], ['QUANTITY'=>$product['quantity']]);
+        }
+        $request->session()->forget('product');
+        return redirect(route('panier'))->with('status', 'Votre commande est validée!');
     }
 
 

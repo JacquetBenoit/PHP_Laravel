@@ -45,6 +45,10 @@ route::post('/delete-panier-article/{id}', 'produitsController@deletePanierItem'
 
 route::post('/delete-panier', 'produitsController@deletePanier')->name('delete-panier');
 
+route::post('/commander', 'produitsController@commander')->name('commander');
+
+route::post('/modifier-qte/{id}', 'produitsController@modifier_qte')->name('modifier-qte');
+
 //Route::get('/listeProduits', 'ProduitsController@listeTest')->name('listeProduits');
 
 

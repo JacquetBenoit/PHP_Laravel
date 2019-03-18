@@ -25,6 +25,6 @@ class Product extends Model
 
     public function command()
     {
-        return $this->belongsToMany('App\Command','command_ligne', 'id_ORDER', 'id_PRODUCT', 'id_PRODUCT','id_ORDER');
+        return $this->belongsToMany('App\Command','command_ligne', 'id_PRODUCT', 'id_ORDER', 'id_PRODUCT','id_ORDER');
     }
 }
