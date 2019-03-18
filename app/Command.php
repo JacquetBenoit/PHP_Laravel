@@ -15,7 +15,7 @@ class Command extends Model
 
     public function product()
     {
-        return $this->belongsToMany('App\product', 'command_ligne',   'id_ORDER','id_PRODUCT');
+        return $this->belongsToMany('App\product', 'command_ligne',   'id_ORDER','id_PRODUCT')->withPivot('QUANTITY');
     }
 
     public function customer()

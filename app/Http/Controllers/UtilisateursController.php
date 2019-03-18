@@ -52,13 +52,9 @@ class UtilisateursController extends Controller
             ->sortBy('id_ORDER');
         //dd($command);
 
-        $command_ligne = Command_ligne::all();
-
-
-
         return view(
             'admin/gestionDesCommandes',
-            ['commands' => $command, 'commands_ligne' => $command_ligne]);
+            ['commands' => $command]);
 
     }
 
@@ -67,13 +63,11 @@ class UtilisateursController extends Controller
         $command = Command::all()
             ->sortBy('id_ORDER');
 
-        $command_ligne = Command_ligne::all();
-
         $idCommand = $request['id'];
 
         return view(
             'admin/gestionDesCommandes',
-            ['commands' => $command, 'commands_ligne' => $command_ligne, 'id' => $idCommand]);
+            ['commands' => $command, 'id' => $idCommand]);
 
     }
 
@@ -87,11 +81,10 @@ class UtilisateursController extends Controller
 
         $command = Command::all()
             ->sortBy('id_ORDER');
-        $command_ligne = Command_ligne::all();
 
         return view(
             'admin/gestionDesCommandes',
-            ['commands' => $command, 'commands_ligne' => $command_ligne]);
+            ['commands' => $command]);
 
     }
 
@@ -103,14 +96,12 @@ class UtilisateursController extends Controller
         $command = Command::all()
             ->sortBy('id_ORDER');
 
-        $command_ligne = Command_ligne::all();
-
         $idCommand = $request['id'];
 //
 
         return view(
             'admin/gestionDesCommandes',
-            ['commands' => $command, 'commands_ligne' => $command_ligne, 'id' => $idCommand]);
+            ['commands' => $command, 'id' => $idCommand]);
 
     }
 }

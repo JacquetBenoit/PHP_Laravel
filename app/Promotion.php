@@ -10,6 +10,10 @@ class Promotion extends Model
     
     protected $table = 'promotion';
 
+    protected $primaryKey = 'id_PROMOTION';
+
+    protected $fillable = ['START_DATE', 'END_DATE', 'PERCENT', 'VALUE'];
+
 
     public function products()
     {

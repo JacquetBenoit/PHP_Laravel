@@ -46,6 +46,11 @@ Route::get('/infos', 'StatiquesController@infos')->name('infos');
 Route::get('/gestions-produits', 'ProduitsController@gestionProduits')->name('gestionProduits');
 
 Route::get('/gestions-promos', 'ProduitsController@gestionPromos')->name('gestionPromos');
+Route::post('/ajouter-promos', 'ProduitsController@addPromos')->name('ajoutPromo');
+Route::post('/details-promos', 'ProduitsController@detailsPromos')->name('gestionPromodetail');
+Route::post('/assigner-promos', 'ProduitsController@assignPromos')->name('gestionPromoassign');
+Route::post('/Suprimer-promos', 'ProduitsController@deletePromos')->name('deletePromo');
+Route::post('/Suprimer-produit-promos', 'ProduitsController@deleteProduitPromo')->name('supprimerProduitDeLaPromo');
 
 Route::get('/gestions-utilisateurs', 'UtilisateursController@gestionUtilisateurs')->name('gestionUtilisateurs');
 
