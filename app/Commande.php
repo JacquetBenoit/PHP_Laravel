@@ -10,8 +10,8 @@ class Commande extends Model
     public $timestamps = false;
     protected $primaryKey = 'id_commande';
 
-    public function produit()
+    public function produits()
     {
-        return $this->belongsToMany('App\Produit', 'produit', 'id_produit', 'id_commande');
+        return $this->belongsToMany('App\Produit', 'commande_produit','id_commande', 'id_produit', 'id_commande', 'id');
     }
 }

@@ -20,6 +20,6 @@ class Produit extends Model
     }
     public function Commande()
     {
-        return $this->belongsToMany('App\Commande', 'commande_produit', 'id_commande', 'id_produit');
+        return $this->belongsToMany('App\Commande', 'commande_produit', 'id_produit', 'id_commande', 'id', 'id_commande');
     }
 }
