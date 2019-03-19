@@ -64,7 +64,7 @@
 
                                 {{--Vérification de la date et de la présence d'une promo--}}
 
-                            @if($produit->id_PROMOTION != "0" && $produit->Promotion->START_DATE < $date && $date < $produit->Promotion->END_DATE)
+                            @if($produit->Promotion && $produit->Promotion->START_DATE < $date && $date < $produit->Promotion->END_DATE)
 
 
                                 {{--Calcul de la réduction de la pomo--}}
