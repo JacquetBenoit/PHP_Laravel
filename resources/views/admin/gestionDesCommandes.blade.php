@@ -8,7 +8,7 @@
 @endsection
 
 @section('content-two')
-    <table class="table table-hover table-dark">
+    <table class="table">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -92,7 +92,7 @@
                 <form action="{{route('gestionProduit')}}" method="POST">
                     {{ csrf_field() }}
                     <input type="hidden" value="{{$command["id_ORDER"]}}" name="id">
-                    <input type="submit" value="Voir commande">
+                    <input type="submit" value="Voir commande" class="btn btn-light">
                 </form>
             </td>
             <td>
@@ -102,7 +102,7 @@
                 <form action="{{route('deleteCommandes')}}" method="POST">
                     {{ csrf_field() }}
                     <input type="hidden" value="{{$command["id_ORDER"]}}" name="idDelete">
-                    <input type="submit" value="Supprimer commande">
+                    <input type="submit" value="Supprimer commande" class="btn btn-light">
                 </form>
             </td>
             <td>
@@ -114,7 +114,7 @@
                     <form action="{{route('confirmCommandes')}}" method="POST">
                         {{ csrf_field() }}
                         <input type="hidden" value="{{$command["id_ORDER"]}}" name="id">
-                        <input type="submit" value="Commande livrée">
+                        <input type="submit" value="Commande livrée" class="btn btn-light">
                     </form>
                 @else
                     <p>Date livraison : {{$command['LIVRAISON_DATE']}}</p>
