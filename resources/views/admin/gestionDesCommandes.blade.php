@@ -33,7 +33,10 @@
 
                         @foreach($command->product as $produit)
                             {{"Articles commandés : " . $produit['NAME']}}
-                                    {{"Quantité : " . $produit->pivot->QUANTITY}}
+                            {{"Quantité : " . $produit->pivot->QUANTITY}}<br>
+                            @if($produit->id_PROMOTION != '0')
+                            {{"promo sur le produit : " . $produit->Promotion->id_PROMOTION}}
+                            @endif
                                     <br>
                         @endforeach
                         <br>
@@ -62,6 +65,7 @@
                                 {{--Vérification de la date et de la présence d'une promo--}}
 
                             @if($produit->id_PROMOTION != "0" && $produit->Promotion->START_DATE < $date && $date < $produit->Promotion->END_DATE)
+
 
                                 {{--Calcul de la réduction de la pomo--}}
 

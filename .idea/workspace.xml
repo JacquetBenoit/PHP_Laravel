@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b9e86210-6caa-42f2-bf1d-654f95939fe4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Command.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Command.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Command_ligne.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProduitsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProduitsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UtilisateursController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UtilisateursController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Promotion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Promotion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/gestionDesCommandes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/gestionDesCommandes.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/gestionDesPromos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/gestionDesPromos.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/gestionDesCommandes.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+            <state relative-caret-position="408">
+              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -57,6 +47,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Command.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="117" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="117" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/gestionDesPromos.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="833">
@@ -65,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="115" selection-start-line="27" selection-start-column="115" selection-end-line="27" selection-end-column="115" />
+            <state relative-caret-position="289">
+              <caret line="17" column="77" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -210,10 +209,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="2183" />
+    <option name="y" value="-25" />
+    <option name="width" value="1022" />
+    <option name="height" value="766" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -343,16 +342,15 @@
       <workItem from="1552574094629" duration="15745000" />
       <workItem from="1552664829304" duration="441000" />
       <workItem from="1552897501652" duration="19006000" />
-      <workItem from="1552921549748" duration="648000" />
+      <workItem from="1552921549748" duration="3699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73516000" />
+    <option name="totallyTimeSpent" value="76567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14179105" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -553,13 +551,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Command_ligne.php" />
-    <entry file="file://$PROJECT_DIR$/app/Command.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="117" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UtilisateursController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1073">
@@ -584,13 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="115" selection-start-line="27" selection-start-column="115" selection-end-line="27" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layout/admin_layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -608,10 +592,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/gestionDesCommandes.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Command.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+          <caret line="17" column="117" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/gestionDesCommandes.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="77" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="77" />
         </state>
       </provider>
     </entry>
