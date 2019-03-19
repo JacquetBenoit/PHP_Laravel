@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Command;
-use App\Command_ligne;
 use App\product;
 use App\Customer;
 

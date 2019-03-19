@@ -18,7 +18,7 @@
          
                <!-- Affiche tous les articles contenuent dans le tableau -->
                @foreach ($products as $product)
-               <form method = "POST" action = "{{route('store-panier', ['id'=>$product->id_PRODUCT])}}">
+               <form method = "POST" action ="{{route('store-panier',['id'=>$product->id_PRODUCT])}}">
                   @csrf
                   <!-- DEBUT Affiche 1 article -->
                   <div class="container-article">
