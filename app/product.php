@@ -28,7 +28,7 @@ class Product extends Model
 
 //        return $this->belongsToMany('App\Command','command_ligne',  'id_ORDER','id_PRODUCT')->withPivot('QUANTITY');
 
-        return $this->belongsToMany('App\Command','command_ligne', 'id_PRODUCT', 'id_ORDER', 'id_PRODUCT','id_ORDER');
+        return $this->belongsToMany('App\Command','command_ligne', 'id_PRODUCT', 'id_ORDER', 'id_PRODUCT','id_ORDER')->withPivot('QUANTITY');
 
     }
 

@@ -31,7 +31,7 @@
 
                         {{--Produits d'une commande--}}
 
-                        @foreach($command->product as $produit)
+                        @foreach($command->products as $produit)
                             {{"Articles commandés : " . $produit['NAME']}}
                             {{"Quantité : " . $produit->pivot->QUANTITY}}<br>
                             @if($produit->id_PROMOTION != '0')
@@ -57,14 +57,14 @@
                 {{--Calcul du prix de la commande--}}
 
                 @php $prixTotal = 0; @endphp
-                @foreach($command->product as $produit)
+                @foreach($command->products as $produit)
                             @php $prixProduit = $produit['PRICE'];
                             $date = date('Y-m-d');
                             @endphp
 
                                 {{--Vérification de la date et de la présence d'une promo--}}
 
-                            @if($produit->id_PROMOTION != "0" && $produit->Promotion->START_DATE < $date && $date < $produit->Promotion->END_DATE)
+                            @if($produit->Promotion && $produit->Promotion->START_DATE < $date && $date < $produit->Promotion->END_DATE)
 
 
                                 {{--Calcul de la réduction de la pomo--}}
