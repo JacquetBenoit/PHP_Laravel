@@ -76,11 +76,11 @@ class UtilisateursController extends Controller
 
     public function deleteCommande(request $request)
     {
+        $commandelete = Command::where('id_ORDER', $request['idDelete'])->first();
+        $commandelete->products()->detach();
+
         $commandelete = Command::where('id_ORDER', $request['idDelete']);
         $commandelete -> delete();
-
-        $commanProddelete = Command_ligne::where('id_ORDER', $request['idDelete']);
-        $commanProddelete -> delete();
 
         $command = Command::all()
             ->sortBy('id_ORDER');

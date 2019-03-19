@@ -38,10 +38,10 @@ class ProduitsController extends Controller
     }
 
     public function storePanier(Request $request)
-    { 
+    {
          $product = Product::find($request->id);
          //$request->session()->flush();
-         $request->session()->put('product.' .$request->id, ['product'=>$product, 'quantity'=>$request->quantity]);
+         $request->session()->put('product.' .$request->id , ['product'=>$product, 'quantity'=>$request->quantity]);
          return redirect(route('panier'));
     }
 
