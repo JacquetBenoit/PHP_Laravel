@@ -16,14 +16,14 @@
         Fin :<input type="date" name="END_DATE">
         Réduction flat<input type="number" name="VALUE" value="0">
         Réduction %<input type="number" name="PERCENT" value="0">
-        <input type="submit" value="Créer une promo">
+        <input type="submit" value="Créer une promo" class="btn btn-light">
 
     </form>
 
 
 
 
-<table class="table table-hover table-dark">
+<table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -91,7 +91,7 @@
                     <form action="{{route('gestionPromodetail')}}" method="POST" >
                         {{ csrf_field() }}
                         <input type="hidden" value="{{$promo["id_PROMOTION"]}}" name="id">
-                        <input type="submit" value="Voir promo">
+                        <input type="submit" value="Voir promo" class="btn btn-light">
                     </form>
                 </td>
                   <td>
@@ -101,7 +101,7 @@
                       <form action="{{route('deletePromo')}}" method="POST" >
                           {{ csrf_field() }}
                           <input type="hidden" value="{{$promo["id_PROMOTION"]}}" name="idDelete">
-                          <input type="submit" value="Supprimer promotion">
+                          <input type="submit" value="Supprimer promotion" class="btn btn-light">
                       </form>
                   </td>
               </tr>
