@@ -6,7 +6,6 @@
 @section('content')
 
 @foreach ($data as $product)
-    @dump ($data)
 
     <div class="container-articles">
         <div class="container-article">

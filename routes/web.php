@@ -23,7 +23,7 @@ Route::get('/', 'StatiquesController@accueil')->name('accueil');
 
 Route::get('/listeProduits/{check}', 'ProduitsController@listeProduits')->name('listeProduits');
 
-Route::get('/panier', 'UtilisateursController@panier')->name('panier');
+Route::get('/panier', 'PanierController@panier')->name('panier');
 
 Route::get('/ficheProduit/{id}', 'ProduitsController@ficheProduit')->name('ficheProduit');
 
@@ -39,15 +39,15 @@ Route::get('/creer-compte', 'UtilisateursController@creerCompte')->name('creerCo
 
 Route::get('/infos', 'StatiquesController@infos')->name('infos');
 
-route::post('/store-panier/{id}', 'produitsController@storePanier')->name('store-panier');
+route::post('/store-panier/{id}', 'PanierController@storePanier')->name('store-panier');
 
-route::post('/delete-panier-article/{id}', 'produitsController@deletePanierItem')->name('delete-panier-item');
+route::post('/delete-panier-article/{id}', 'PanierController@deletePanierItem')->name('delete-panier-item');
 
-route::post('/delete-panier', 'produitsController@deletePanier')->name('delete-panier');
+route::post('/delete-panier', 'PanierController@deletePanier')->name('delete-panier');
 
-route::post('/commander', 'produitsController@commander')->name('commander');
+route::post('/commander', 'PanierController@commander')->name('commander');
 
-route::post('/modifier-qte/{id}', 'produitsController@modifier_qte')->name('modifier-qte');
+route::post('/modifier-qte/{id}', 'PanierController@modifier_qte')->name('modifier-qte');
 
 //Route::get('/listeProduits', 'ProduitsController@listeTest')->name('listeProduits');
 
@@ -55,38 +55,38 @@ route::post('/modifier-qte/{id}', 'produitsController@modifier_qte')->name('modi
 
 /* ---------------------BACK OFFICE------------------------*/
 
-Route::get('/gestions-produits', 'ProduitsController@gestionProduits')->name('gestionProduits');
+Route::get('/gestions-produits', 'ProduitAdminController@gestionProduits')->name('gestionProduits');
 
-Route::get('/gestions-promos', 'ProduitsController@gestionPromos')->name('gestionPromos');
-Route::post('/ajouter-promos', 'ProduitsController@addPromos')->name('ajoutPromo');
-Route::post('/details-promos', 'ProduitsController@detailsPromos')->name('gestionPromodetail');
-Route::post('/assigner-promos', 'ProduitsController@assignPromos')->name('gestionPromoassign');
-Route::post('/Suprimer-promos', 'ProduitsController@deletePromos')->name('deletePromo');
-Route::post('/Suprimer-produit-promos', 'ProduitsController@deleteProduitPromo')->name('supprimerProduitDeLaPromo');
+Route::get('/gestions-promos', 'PromoAdminController@gestionPromos')->name('gestionPromos');
+Route::post('/ajouter-promos', 'PromoAdminController@addPromos')->name('ajoutPromo');
+Route::post('/details-promos', 'PromoAdminController@detailsPromos')->name('gestionPromodetail');
+Route::post('/assigner-promos', 'PromoAdminController@assignPromos')->name('gestionPromoassign');
+Route::post('/Suprimer-promos', 'PromoAdminController@deletePromos')->name('deletePromo');
+Route::post('/Suprimer-produit-promos', 'PromoAdminController@deleteProduitPromo')->name('supprimerProduitDeLaPromo');
 
-Route::get('/gestions-utilisateurs', 'UtilisateursController@gestionUtilisateurs')->name('gestionUtilisateurs');
+Route::get('/gestions-utilisateurs', 'UtilisateursAdminController@gestionUtilisateurs')->name('gestionUtilisateurs');
 
-Route::get('/gestions-commandes', 'UtilisateursController@gestionCommandes')->name('gestionCommandes');
-Route::post('/gestions-commandes', 'UtilisateursController@gestionCommande')->name('gestionProduit');
-Route::post('/gestions-commandes-s', 'UtilisateursController@deleteCommande')->name('deleteCommandes');
-Route::post('/gestions-commandes-c', 'UtilisateursController@confirmCommande')->name('confirmCommandes');
+Route::get('/gestions-commandes', 'CommandesAdminController@gestionCommandes')->name('gestionCommandes');
+Route::post('/gestions-commandes', 'CommandesAdminController@gestionCommande')->name('gestionProduit');
+Route::post('/gestions-commandes-s', 'CommandesAdminController@deleteCommande')->name('deleteCommandes');
+Route::post('/gestions-commandes-c', 'CommandesAdminController@confirmCommande')->name('confirmCommandes');
 
-Route::get('/ajout-produit', 'ProduitsController@ajoutProduit')->name('ajoutProduit');
+Route::get('/ajout-produit', 'ProduitAdminController@ajoutProduit')->name('ajoutProduit');
 
-Route::get('/ajout-utilisateur', 'UtilisateursController@ajoutUtilisateur')->name('ajoutUtilisateur');
+Route::get('/ajout-utilisateur', 'UtilisateursAdminController@ajoutUtilisateur')->name('ajoutUtilisateur');
 
-route::post('/store', 'ProduitsController@store');
+route::post('/store', 'ProduitAdminController@store');
 
-route::post('/store-utilisateur', 'UtilisateursController@store');
+route::post('/store-utilisateur', 'UtilisateursAdminController@store');
 
-route::get('/gestions-produits/{id}/delete', 'ProduitsController@delete')->name('deleteProduit');
+route::get('/gestions-produits/{id}/delete', 'ProduitAdminController@delete')->name('deleteProduit');
 
-route::delete('/gestion-produits/{id}/delete', 'ProduitsController@destroy')->name('destroyProduit');
+route::delete('/gestion-produits/{id}/delete', 'ProduitAdminController@destroy')->name('destroyProduit');
 
-route::get('/gestions-utilisateurs/{id}/delete', 'UtilisateursController@delete')->name('deleteUtilisateur');
+route::get('/gestions-utilisateurs/{id}/delete', 'UtilisateursAdminController@delete')->name('deleteUtilisateur');
 
-route::delete('/gestion-utilisateurs/{id}/delete', 'UtilisateursController@destroy')->name('destroyUtilisateur');
+route::delete('/gestion-utilisateurs/{id}/delete', 'UtilisateursAdminController@destroy')->name('destroyUtilisateur');
 
-route::get('/edition-produit/{id}', 'ProduitsController@update')->name('updateProduit');
+route::get('/edition-produit/{id}', 'ProduitAdminController@update')->name('updateProduit');
 
-route::get('/edition-utilisateur/{id}', 'UtilisateursController@update')->name('updateUtilisateur');
+route::get('/edition-utilisateur/{id}', 'UtilisateursAdminController@update')->name('updateUtilisateur');
