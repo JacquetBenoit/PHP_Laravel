@@ -86,7 +86,7 @@ header p span{
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	margin: 0 10%;
+	margin: 0 30%;
 }
 /* -- CONTAINER D'UN ARTICLE */
 .container-articles .container-article {

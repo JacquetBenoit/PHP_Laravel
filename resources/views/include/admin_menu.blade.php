@@ -9,6 +9,7 @@
             <a class="nav-item nav-link" href="{{route('gestionUtilisateurs')}}">utilisateurs</a>
             <a class="nav-item nav-link" href="{{route('gestionPromos')}}">promos</a>
             <a class="nav-item nav-link" href="{{route('gestionProduits')}}">produits</a>
+              <a class="nav-item nav-link" href="{{route('accueil')}}">Accueil</a>
           </div>
         </div>
       </nav>

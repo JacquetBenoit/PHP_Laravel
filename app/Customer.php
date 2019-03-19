@@ -12,6 +12,9 @@ class Customer extends Model
 
     protected $table = 'customer';
 
+    protected $fillable = ['EMAIL', 'FIRSTNAME', 'id_CUSTOMER', 'NAME', 'PASSWORD'];
+
+
 
     public function address()
     {
