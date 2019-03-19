@@ -8,6 +8,7 @@ class Promotion extends Model
 {
     protected $table = 'promotion';
     public $timestamps = false;
+    protected $primaryKey = 'id_promotion';
 
     public function produit()
     {
