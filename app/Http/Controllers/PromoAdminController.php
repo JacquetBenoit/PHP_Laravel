@@ -37,7 +37,7 @@ class PromoAdminController extends Controller
             ->sortBy('id_PROMOTION');
         $products = Product::all();
 
-        return view('admin/gestionDesPromos', ['promos' => $promo], ['id' => $request["id"]], ["products" => $products]);
+        return view('admin/gestionDesPromos',['promos' => $promo, 'id' => $request["id"], "products" => $products]);
     }
 
     public function assignPromos(Request $request)
@@ -56,7 +56,7 @@ class PromoAdminController extends Controller
         $promo = Promotion::all()
             ->sortBy('id_PROMOTION');
 
-        return view('admin/gestionDesPromos', ['promos' => $promo], ['id' => $request["id"]], ["products" => $products]);
+        return view('admin/gestionDesPromos', ['promos' => $promo, 'id' => $request["id"], "products" => $products]);
     }
 
     public function deletePromos(Request $request)
