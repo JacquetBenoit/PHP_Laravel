@@ -40,7 +40,7 @@
                         <input type="number" name="quantity" value="1" min="0" required/>
 
                         <!-- Ajouter au panier -->
-                     <button type="submit" value="">Ajouter au panier</button>
+                     <button class="btn btn-light" type="submit" value="">Ajouter au panier</button>
                      </div>
                   </div>
 

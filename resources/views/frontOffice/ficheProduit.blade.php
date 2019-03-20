@@ -5,6 +5,8 @@
 
 @section('content')
 {{-- Fiche produit {{ $id }} --}}
+<form method = "POST" action ="{{route('store-panier',['id'=>$product->id_PRODUCT])}}">
+    @csrf
 <div class="container-articles">
     <div class="container-article">
 
@@ -20,13 +22,11 @@
             <p>{{$product->PRICE}}cents</p>
            
            <!-- Quantité -->
-           <input type="number" name="" value="1" min="0" max="10" required/>
-
-           <!-- Case à cocher -->
-           <label for="case">Ajouter au panier</label>
-           <input type="checkbox" name="add_to_basket[]" value="">
+           <input type="number" name="quantity" value="1" min="0" required/>
+           <button class="btn btn-light" type="submit" value="">Ajouter au panier</button>
         </div>
     </div>
 </div>
+</form>
 
 @endsection
