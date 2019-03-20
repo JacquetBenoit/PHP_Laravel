@@ -35,7 +35,7 @@
                             {{"Articles commandés : " . $produit['NAME']}}
                             {{"Quantité : " . $produit->pivot->QUANTITY}}<br>
                             @if($produit->id_PROMOTION != '0')
-                            {{"promo sur le produit : " . $produit->Promotion->id_PROMOTION}}
+                            {{"promo sur le produit : " . $produit->id_PROMOTION}}
                             @endif
                                     <br>
                         @endforeach
