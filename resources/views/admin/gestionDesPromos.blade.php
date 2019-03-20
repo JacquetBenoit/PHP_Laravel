@@ -51,7 +51,13 @@
                             Assigner la promotion au produit :
                             <form action="{{route('gestionPromoassign')}}" method="POST" >
                                 {{ csrf_field() }}
-                                <input type="number" value="id du produit" name="idProduit">
+
+                                <select name="idProduit">
+                                    @foreach($products as $product)
+                                        <option value="{{$product->id_PRODUCT}}">{{$product->NAME}}</option>
+                                    @endforeach
+                                </select>
+
                                 <input type="hidden" value="{{$promo["id_PROMOTION"]}}" name="id">
                                 <input type="submit" value="Valider">
                             </form>

@@ -28,4 +28,6 @@ class Command extends Model
         return $this->belongsToMany('App\product', 'command_ligne', 'id_ORDER', 'id_PRODUCT', 'id_ORDER', 'id_PRODUCT')->withPivot('QUANTITY');
     }
 
+
+
 }

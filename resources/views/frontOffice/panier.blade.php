@@ -6,6 +6,10 @@
 @section('content')
 
 @foreach ($data as $product)
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     <div class="container-articles">
         <div class="container-article">
             <div class="container-left">
