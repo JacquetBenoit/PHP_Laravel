@@ -18,7 +18,7 @@ class PanierController extends Controller
     {
          $product = Product::find($request->id);
          $request->session()->put('product.' .$request->id , ['product'=>$product, 'quantity'=>$request->quantity]);
-         return redirect(route('panier'));
+         return redirect('/listeProduits/check');
     }
 
     public function deletePanierItem(Request $request)
