@@ -17,16 +17,18 @@
             <h2>{{$produit -> nom ."\n"}}</h2>
             <p>{{$produit -> prix /100}} €</p>
 
-           
            <!-- Quantité -->
            <input type="number" name="quantity[{{$produit->nom}}]" value="1" min="0" max="10" required/>
 
            <!-- Case à cocher -->
-           <label for="case">Ajouter au panier</label>
-           <input type="checkbox" name="add_to_basket[]" value="">
+           {{--<label for="case">Ajouter au panier</label>
+           <input type="checkbox" name="add_to_basket[]" value="">--}}
 
             <!-- Affiche la description de l'article -->
             <p>{{$produit->description}}</p>
+
+            <!-- Envoie du formulaire -->
+            <button type="button" class="btn btn-secondary btn-lg" value="add_to_basket"><i class="fas fa-shopping-cart"></i></button>
         </div>
     </div>
 </div>
