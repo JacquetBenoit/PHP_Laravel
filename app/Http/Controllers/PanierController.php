@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Command;
 use App\Product;
 
 class PanierController extends Controller
