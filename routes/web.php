@@ -19,12 +19,18 @@
 
 Route::get('/', 'StatiquesController@accueil')->name('accueil');
 
+// Liste des produits
 Route::get('/listeProduits', 'ProduitsController@listeProduits')->name('listeProduits');
+
+// Trie liste des produits
 Route::get('/listeProduits/trie/{type}', 'ProduitsController@listeProduitsTrie')->name('listeProduitsTrie');
 
-Route::get('/panier', 'UtilisateursController@panier')->name('panier');
-
+// Fiche d'un produit
 Route::get('/ficheProduit/{id}', 'ProduitsController@ficheProduit')->name('ficheProduit');
+
+// Ajouter un produit au panier
+Route::get('/panier', 'UtilisateursController@panier')->name('panier');
+Route::post('/panier', 'UtilisateursController@ajouterPanier')->name('ajouterPanier');
 
 Route::get('/commandes', 'UtilisateursController@commande')->name('commandes');
 
