@@ -28,7 +28,7 @@ class PromoAdminController extends Controller
         $promo = Promotion::all()
             ->sortBy('id_PROMOTION');
 
-        return view('admin/gestionDesPromos', ['promos' => $promo]);
+        return redirect()-> route('gestionPromos', ['promos' => $promo]);
     }
 
     public function detailsPromos(Request $request)
@@ -63,10 +63,15 @@ class PromoAdminController extends Controller
     {
         $promotion = Promotion::where('id_PROMOTION', $request['idDelete']);
         $promotion->delete();
-        Product::updateOrCreate(['id_PROMOTION' => $request->input('idDelete')],
-            ['id_PROMOTION' => "0"]
-        );
 
+        $products = Product::all();
+        foreach($products as $product){
+            if($product->id_PROMOTION == $request->input('idDelete')){
+                Product::updateOrCreate(['id_PROMOTION' => $request->input('idDelete')],
+                    ['id_PROMOTION' => "0"]
+                );
+            }
+        }
 
         $promo = Promotion::all()
             ->sortBy('id_PROMOTION');

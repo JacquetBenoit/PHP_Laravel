@@ -6,7 +6,7 @@
     Gestion des promotions
 @endsection
 
-@section('content-two')
+@section('content-two')@dump ($_POST)
 
     {{--Créer une nouvelle promotion--}}
 
