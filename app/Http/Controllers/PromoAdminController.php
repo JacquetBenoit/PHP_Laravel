@@ -18,14 +18,21 @@ class PromoAdminController extends Controller
 
     public function addPromos(Request $request)
     {
-        if ($request->get('START_DATE') && $request->get('END_DATE')) {
-            Promotion::updateOrCreate([
+        $request->validate([
+            'START_DATE' => 'required',
+            'END_DATE' => 'required',
+            'VALUE' => 'required',
+            'PERCENT' => 'required'
+        ]);
+
+
+        Promotion::updateOrCreate([
                 'START_DATE' => $request->get('START_DATE'),
                 'END_DATE' => $request->get('END_DATE'),
                 'VALUE' => $request->get('VALUE'),
                 'PERCENT' => $request->get('PERCENT')
             ]);
-        }
+
 
         $promo = Promotion::all()
             ->sortBy('id_PROMOTION');
