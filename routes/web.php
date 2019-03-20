@@ -68,8 +68,8 @@ Route::get('/gestions-utilisateurs', 'UtilisateursAdminController@gestionUtilisa
 
 Route::get('/gestions-commandes', 'CommandesAdminController@gestionCommandes')->name('gestionCommandes');
 Route::post('/gestions-commandes', 'CommandesAdminController@gestionCommande')->name('gestionProduit');
-Route::post('/gestions-commandes-s', 'CommandesAdminController@deleteCommande')->name('deleteCommandes');
-Route::post('/gestions-commandes-c', 'CommandesAdminController@confirmCommande')->name('confirmCommandes');
+Route::post('/gestions-commandes', 'CommandesAdminController@deleteCommande')->name('deleteCommandes');
+Route::post('/gestions-commandes', 'CommandesAdminController@confirmCommande')->name('confirmCommandes');
 
 Route::get('/ajout-produit', 'ProduitAdminController@ajoutProduit')->name('ajoutProduit');
 
