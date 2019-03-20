@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Commande;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,9 +37,6 @@ class ProduitsController extends Controller
         $produit = Produit::find($id);
         return view('frontOffice/ficheProduit', ['produit' => $produit]);
     }
-
-
-
     // ------------ BACK OFFICE ------------------
 
     // GESTION DES PRODUITS
