@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
         <!-- Styles -->
         <link href="{{asset('css/resetCSS.css')}}" rel="stylesheet" type="text/css">
@@ -17,12 +18,14 @@
     </head>
 <!-- HEADER -->
 <header>
-    <p><span>w</span></p>
-    <h1>SNEAKERS STORE</h1>
+    <a href="/">
+        <p><span>w</span></p>
+         <h1>SNEAKERS STORE</h1>
+    </a>
     @include('include/menu')
 </header>   
 <body>
-    <div class="full-height">      
+    <div class="">
         @yield('content')
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
