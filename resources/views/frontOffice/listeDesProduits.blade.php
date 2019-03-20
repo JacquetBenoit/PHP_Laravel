@@ -20,8 +20,8 @@
           </div>
 
          <!-- Formulaire appelle le programme panier.php pour lui soumettre les cases cochées -->
-            <form method = "POST" action = "panier.php"> 
-
+            <form method = "POST" action = "{{route('ajouterPanier')}}">
+                @csrf
                <!-- Affiche tous les articles contenuent dans le tableau -->
                @foreach ($produits as $key=>$produit)
             
@@ -37,17 +37,17 @@
                      
                      <div class="container-right">
                         <!-- Affiche le nom et le prix de l'article -->
-                        <a href="{{route('ficheProduit',['id'=>$produit -> id_produit])}}">
+                        <a href="{{route('ficheProduit',['id'=>$produit -> id])}}">
                            <h2>{{$produit->nom ."\n"}}</h2>
                         </a>
                          <p>{{$produit -> prix /100}} €</p>
                         
                         <!-- Quantité -->
-                        <input type="number" name="quantity[{{$key}}]" value="1" min="0" max="10" required/>
+                        {{--<input type="number" name="quantity[{{$key}}]" value="1" min="0" max="10" required/>--}}
 
                         <!-- Case à cocher -->
-                        <label for="case">Ajouter au panier</label>
-                        <input type="checkbox" name="add_to_basket[]" value="{{$key}}">
+                        {{--<label for="case">Ajouter au panier</label>
+                        <input type="checkbox" name="add_to_basket[]" value="{{$produit->id}}">--}}
                      </div>
                   </div>
 
@@ -57,7 +57,7 @@
 
             <!-- Envoie du formulaire -->
             {{-- <button type="button" class="btn btn-secondary btn-lg" value="to_order">Commander</button> --}}
-            <button type="submit" value="to_order">Commander</button>
+            {{--<button type="submit" value="to_order">Ajouter au panier</button>--}}
             </form>
       </div>
 
