@@ -7,6 +7,16 @@
 @endsection
 
 @section('content-two')
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container">
 <form method="POST" action="/store">
   @csrf
@@ -46,4 +56,5 @@
   <input type="hidden" name="id" value="{{$produit->id_PRODUCT}}">
 </form>
 </div>
+
 @endsection

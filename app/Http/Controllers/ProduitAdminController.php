@@ -22,6 +22,15 @@ class ProduitAdminController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'NAME' => 'required',
+            'DESCRIPTION' => 'required',
+            'PRICE' => 'required',
+            'WEIGHT' => 'required',
+            'id_CATEGORY' => 'required',
+            'IMAGE' => 'required',
+        ]);
+        
         Product::updateOrCreate(['id_PRODUCT' => $request->input('id')], $request->all());
 
         return redirect()->route('gestionProduits');
