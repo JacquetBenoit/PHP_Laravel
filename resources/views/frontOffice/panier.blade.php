@@ -32,5 +32,6 @@
       @endforeach
       </tbody>
    </table>
-
+   <!-- Envoie du formulaire -->
+   <button type="button" class="btn btn-secondary btn-lg" value="commander">Commander</button>
 @endsection
