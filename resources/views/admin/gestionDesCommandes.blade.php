@@ -82,7 +82,7 @@
                             @endphp
                     <br>
                 @endforeach
-                {{"Prix total : " . $prixTotal}}
+                {{"Prix total : " . $prixTotal . " €"}}
             </td>
 
             <td>
