@@ -21,6 +21,13 @@ class UtilisateursAdminController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'NAME' => 'required',
+            'FIRSTNAME' => 'required',
+            'EMAIL' => 'required',
+            'PASSWORD' => 'required'
+        ]);
+        
         Customer::updateOrCreate(['id_CUSTOMER'=>$request->input('id')],$request->all());
 
         return redirect()->route('gestionUtilisateurs');
