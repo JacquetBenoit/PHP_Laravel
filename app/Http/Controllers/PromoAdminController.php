@@ -84,11 +84,11 @@ class PromoAdminController extends Controller
         Product::updateOrCreate(['id_PROMOTION' => $request->input('id')],
             ['id_PROMOTION' => "0"]
         );
-
+        $products = Product::all();
         $promo = Promotion::all()
             ->sortBy('id_PROMOTION');
 
-        return view('admin/gestionDesPromos', ['promos' => $promo], ['id' => $request["id"]]);
+        return view('admin/gestionDesPromos', ['promos' => $promo, 'id' => $request["id"], "products" => $products]);
     }
 
 }
