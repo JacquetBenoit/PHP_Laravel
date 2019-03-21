@@ -36,7 +36,7 @@
     <label for="image">Password</label>
     <input value="{{$customer->PASSWORD}}" name="PASSWORD" type="text" class="form-control" id="pwd" placeholder="Enter Password">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-light">Submit</button>
   <input type="hidden" name="id" value="{{$customer->id_CUSTOMER}}">
 </form>
 </div>

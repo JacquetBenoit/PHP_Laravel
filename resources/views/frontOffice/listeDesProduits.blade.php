@@ -37,7 +37,7 @@
                         
                         
                         <!-- Quantité -->
-                        <input type="number" name="quantity" value="1" min="0" required/>
+                     <input type="number" name="quantity" value="1" min="0" max="{{$product->STOCK}}" required/>
 
                         <!-- Ajouter au panier -->
                      <button class="btn btn-light" type="submit" value="">Ajouter au panier</button>

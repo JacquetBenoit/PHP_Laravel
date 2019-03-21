@@ -25,7 +25,7 @@ class ProduitAdminController extends Controller
         $request->validate([
             'NAME' => 'required',
             'DESCRIPTION' => 'required',
-            'PRICE' => 'required',
+            'PRICE' => 'required|numeric|min:0',
             'WEIGHT' => 'required',
             'id_CATEGORY' => 'required',
             'IMAGE' => 'required',
