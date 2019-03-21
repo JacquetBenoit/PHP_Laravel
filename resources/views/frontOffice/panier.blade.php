@@ -10,7 +10,6 @@
     <div class="container-articles">
         <div class="container-article">
             <div class="container-left">
-{{--                @dd($product['product'])--}}
                 {{$product['product']->NAME}}
                 <img src="{{$product['product']->IMAGE}}" alt="vegetables-images" class="image">
             </div>
