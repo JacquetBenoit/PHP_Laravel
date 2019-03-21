@@ -35,11 +35,9 @@ class CommandesAdminController extends Controller
             }
         }
 
-        $idCommand = $request['id'];
-
         return view(
             'admin/gestionDesCommandes',
-            ['commands' => $command, 'id' => $idCommand, 'oneCommand' => $oneCommand[0]]);
+            ['commands' => $command, 'oneCommand' => $oneCommand[0]]);
 
     }
 
