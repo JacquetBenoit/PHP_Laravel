@@ -22,7 +22,7 @@
             <p>{{$product->PRICE}}cents</p>
            
            <!-- Quantité -->
-           <input type="number" name="quantity" value="1" min="0" required/>
+           <input type="number" name="quantity" value="1" min="0" max="{{$product->STOCK}}" required/>
            <button class="btn btn-light" type="submit" value="">Ajouter au panier</button>
         </div>
     </div>

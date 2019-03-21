@@ -17,7 +17,7 @@
             <div class="container-right">
                 <form method="POST" action="{{route('modifier-qte', ['id'=>$product['product']->id_PRODUCT])}}">
                     @csrf
-                     Quantité : <input type="number" name="quantity" value="{{$product['quantity']}}" min="0" required/>
+                     Quantité : <input type="number" name="quantity" value="{{$product['quantity']}}" min="0" max="{{$product['product']->STOCK}}" required/>
                      <button class="btn btn-light" type="submit" value="">modifier qte</button>
                 </form>
                 <form method = "POST" action = "{{route('delete-panier-item', ['id'=>$product['product']->id_PRODUCT])}}">
@@ -41,6 +41,15 @@
 @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
+    </div>
+@endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
 @endif
 
