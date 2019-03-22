@@ -4,9 +4,7 @@
     
 
 @section('content')
-@php
-$total = 0;
-@endphp
+@php($total = 0)
 @foreach ($data as $product)
 
     <div class="container-articles">
@@ -20,9 +18,7 @@ $total = 0;
                 <div class="row">
                     <form method="POST" action="{{route('modifier-qte', ['id'=>$product['product']->id_PRODUCT])}}">
                         @csrf
-                        @php
-                         $total += $totalproduit;    
-                        @endphp
+                        @php($total += $totalproduit)
                         Quantité : <input type="number" name="quantity" value="{{$product['quantity']}}" min="0" max="{{$product['product']->STOCK}}" required/>
                         <button class="btn btn-light" type="submit" value="">modifier qte</button>
                     </form>
