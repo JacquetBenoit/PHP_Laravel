@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Http\Controllers\PDO;
 
 class ProduitAdminController extends Controller
 {
@@ -11,6 +12,7 @@ class ProduitAdminController extends Controller
     {
         $products = Product::all()
             ->sortBy('NAME');
+
         return view('admin/gestionProduits', ['products' => $products]);
     }
 
