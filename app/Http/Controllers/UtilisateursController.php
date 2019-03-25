@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Command;
 use App\product;
 use App\Customer;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class UtilisateursController extends Controller
 {
@@ -22,7 +24,12 @@ class UtilisateursController extends Controller
 
     public function monCompte()
     {
-        return view('frontOffice/monCompte');
+        $id = Auth::id();
+        $user = user::find($id);
+        $customer = customer::where('id_USER', $id)->first();
+
+
+        return view('frontOffice/monCompte', ['user' => $user, 'customer' => $customer]);
     }
 
     public function creerCompte()
@@ -33,6 +40,15 @@ class UtilisateursController extends Controller
     public function commande()
     {
         return view('frontOffice/commandes');
+    }
+
+    public function edit (Request $request)
+    {
+        dd($request);
+        $id = Auth::id();
+        $user = user::find($id);
+
+        return view('frontOffice/monCompte', ['user' => $user]);
     }
 
 

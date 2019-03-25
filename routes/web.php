@@ -34,6 +34,7 @@ Route::get('/coordonnees', 'UtilisateursController@coordonnees')->name('coordonn
 Route::get('/moyens-paiement', 'UtilisateursController@moyensPaiement')->name('moyensPaiement');
 
 Route::get('/mon-compte', 'UtilisateursController@monCompte')->name('monCompte');
+Route::post('/mon-compte-edit', 'UtilisateursController@edit')->name('editCompte');
 
 Route::get('/creer-compte', 'UtilisateursController@creerCompte')->name('creerCompte');
 
