@@ -34,8 +34,7 @@
                      <div class="container-right">
                         <!-- Affiche le nom et le prix de l'article -->
                         {{$product->PRICE}}cents
-                        
-                        
+
                         <!-- Quantité -->
                      <input type="number" name="quantity" value="1" min="0" max="{{$product->STOCK}}" required/>
 

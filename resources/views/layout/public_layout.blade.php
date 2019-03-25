@@ -13,8 +13,8 @@
         <link href="{{asset('css/resetCSS.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
+ 
         <script src="{{ asset('js/app.js') }}" defer></script>
-        
     </head>
 <!-- HEADER -->
 <header>
@@ -68,6 +68,7 @@
             </div>
         </div>
     </nav>
+
     <p><span>w</span></p>
     <h1>SNEAKERS STORE</h1>
     @include('include/menu')
