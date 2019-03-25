@@ -17,8 +17,7 @@ class CreateCustomerTable extends Migration {
 			$table->integer('id_CUSTOMER', true);
 			$table->string('NAME', 45);
 			$table->string('FIRSTNAME', 45);
-			$table->string('EMAIL', 45);
-			$table->string('PASSWORD', 45);
+			$table->integer('id_USER')->index('id_USER');
 		});
 	}
 
