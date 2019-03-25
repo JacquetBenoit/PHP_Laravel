@@ -13,6 +13,7 @@
         <link href="{{asset('css/resetCSS.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
+        <script src="{{ asset('js/app.js') }}" defer></script>
         
     </head>
 <!-- HEADER -->

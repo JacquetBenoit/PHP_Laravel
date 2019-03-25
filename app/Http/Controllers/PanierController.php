@@ -9,6 +9,11 @@ use App\Product;
 class PanierController extends Controller
 {
     
+    public function __construct()
+    {
+        $this->middleware('auth')->only('commander');
+    }
+
     public function panier(Request $request)
     {
         $data = $request->session()->get('product', []);
