@@ -15,10 +15,11 @@ class CreateCommandTable extends Migration {
 		Schema::create('command', function(Blueprint $table)
 		{
 			$table->integer('id_ORDER', true);
-			$table->integer('id_CUSTOMER')->index('id_CUSTOMER');
-			$table->integer('id_DELIVERY_ADDRESS')->index('id_DELIVERY_ADDRESS');
-			$table->integer('id_INVOICE_ADDRESS')->index('id_INVOICE_ADDRESS');
+			$table->integer('id_CUSTOMER')->default(10)->index('id_CUSTOMER');
+			$table->integer('id_DELIVERY_ADDRESS')->default(1)->index('id_DELIVERY_ADDRESS');
+			$table->integer('id_INVOICE_ADDRESS')->default(1)->index('id_INVOICE_ADDRESS');
 			$table->dateTime('COMMAND_DATE');
+			$table->date('LIVRAISON_DATE')->nullable();
 		});
 	}
 
