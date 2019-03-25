@@ -90,3 +90,10 @@ route::delete('/gestion-utilisateurs/{id}/delete', 'UtilisateursAdminController@
 route::get('/edition-produit/{id}', 'ProduitAdminController@update')->name('updateProduit');
 
 route::get('/edition-utilisateur/{id}', 'UtilisateursAdminController@update')->name('updateUtilisateur');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

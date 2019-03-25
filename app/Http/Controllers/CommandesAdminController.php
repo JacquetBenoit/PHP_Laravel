@@ -25,14 +25,19 @@ class CommandesAdminController extends Controller
 
     public function gestionCommande(request $request)
     {
+
         $command = Command::all()
             ->sortBy('id_ORDER');
-
-        $idCommand = $request['id'];
+        $oneCommand = [];
+        foreach ($command as $com) {
+            if ($com->id_ORDER === intval($request['id'])) {
+                array_push($oneCommand, $com);
+            }
+        }
 
         return view(
             'admin/gestionDesCommandes',
-            ['commands' => $command, 'id' => $idCommand]);
+            ['commands' => $command, 'oneCommand' => $oneCommand[0]]);
 
     }
 

@@ -7,6 +7,7 @@
 @endsection
 
 @section('content-two')
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -46,6 +47,7 @@
           </tr>
         </thead>
         <tbody>
+
 
         {{--Affichage des détails d'une promotion--}}
 

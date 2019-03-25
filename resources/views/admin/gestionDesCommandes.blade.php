@@ -22,34 +22,28 @@
         <tr>
 
             {{--Affichage du détail d'une commande--}}
-
-            @foreach($commands as $command)
-                @if(array_key_exists('id', $_POST))
-                    @if($command["id_ORDER"] == $id)
-                        <h2>{{"Client : " . $command->customer->NAME}}</h2>
-                        <h2>{{"Commande num : " . $command["id_ORDER"]}}</h2>
-
-                        {{--Produits d'une commande--}}
-
-                        @foreach($command->products as $produit)
-                            {{"Articles commandés : " . $produit['NAME']}}
-                            {{"Quantité : " . $produit->pivot->QUANTITY}}<br>
-                            @if($produit->id_PROMOTION != '0')
-                            {{"promo sur le produit : " . $produit->id_PROMOTION}}
-                            @endif
-                                    <br>
-                        @endforeach
-                        <br>
-
-                        {{--Date de commande et de livraison--}}
-
-                        {{"Date de la commande : " . $command["COMMAND_DATE"]}}
-                        <br>
-                        {{"Date de livraison : " . $command["LIVRAISON_DATE"]}}
-                        <br><br>
+            @if(isset($oneCommand))
+                <h2>{{"Client : " . $oneCommand->customer->NAME}}</h2>
+                <h2>{{"Commande num : " . $oneCommand["id_ORDER"]}}</h2>
+                @foreach($oneCommand->products as $produit)
+                    {{"Articles commandés : " . $produit['NAME']}}
+                    {{"Quantité : " . $produit->pivot->QUANTITY}}<br>
+                    @if($produit->id_PROMOTION != '0')
+                        {{"promo sur le produit : " . $produit->id_PROMOTION}}
                     @endif
-                @endif
+                    <br>
+                @endforeach
+                <br>
+
+                {{--Date de commande et de livraison--}}
+
+                {{"Date de la commande : " . $oneCommand["COMMAND_DATE"]}}
+                <br>
+                {{"Date de livraison : " . $oneCommand["LIVRAISON_DATE"]}}
+                <br><br>
+            @endif
         </tr>
+            @foreach($commands as $command)
         <tr>
             <th scope="row">{{$command["id_ORDER"]}}</th>
             <td>{{$command->customer->NAME}}</td>
@@ -82,7 +76,7 @@
                             @endphp
                     <br>
                 @endforeach
-                {{"Prix total : " . $prixTotal}}
+                {{"Prix total : " . $prixTotal . " €"}}
             </td>
 
             <td>

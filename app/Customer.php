@@ -25,5 +25,10 @@ class Customer extends Model
     {
         return $this->hasMany('App\Command', 'id_CUSTOMER', 'id_CUSTOMER');
     }
-    
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'id_USER', 'id');
+    }
+
 }
