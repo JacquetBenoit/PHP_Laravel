@@ -49,9 +49,6 @@ class PanierController extends Controller
 
         foreach ($request->session()->get('product', []) as $product)
         {
-            $request->validate([
-                'QUANTITY' => 'required|numeric|max:'.$product['product']->STOCK
-            ]);
             $command->products()->attach($product['product'], ['QUANTITY'=>$product['quantity']]);
         }
         $request->session()->forget('product');
