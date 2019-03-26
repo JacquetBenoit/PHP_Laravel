@@ -27,8 +27,9 @@ class UtilisateursController extends Controller
     {
         $id = Auth::id();
         $user = user::find($id);
-        $customer = customer::where('id_USER', $id)->first();
-
+        $customer = Customer::firstOrCreate(['id_USER' => $id]);
+        Address::firstOrcreate(['id_CUSTOMER' => $customer->id_CUSTOMER]);
+        // $customer = customer::where('id_USER', $id)->first();
 
         return view('frontOffice/monCompte', ['user' => $user, 'customer' => $customer]);
     }
@@ -58,11 +59,11 @@ class UtilisateursController extends Controller
             'COUNTRY' => 'required',
         ]);
 
-        $customer = Customer::updateOrCreate([],$request->all());
+        $customer = Customer::updateOrCreate(['id_CUSTOMER'=> $request->input('id_c')],$request->all());
 
         $user = User::updateOrCreate(['id'=>$id],$request->all());
 
-        Address::updateOrCreate([],$request->all());
+        Address::updateOrCreate(['id_ADDRESS'=>$request->id_ADDRESS],$request->all());
 
         return view('frontOffice/monCompte', ['user' => $user, 'customer' => $customer]);
     }

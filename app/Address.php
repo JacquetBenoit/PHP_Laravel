@@ -10,7 +10,7 @@ class Address extends Model
     
     protected $table = 'address';
 
-    protected $fillable = ['STREET1', 'STREET2', 'POSTCODE', 'TOWN', 'COUNTRY'];
+    protected $fillable = ['STREET1', 'STREET2', 'POSTCODE', 'TOWN', 'COUNTRY', 'id_CUSTOMER'];
     protected $primaryKey = 'id_ADDRESS';
 
     public function Customers()

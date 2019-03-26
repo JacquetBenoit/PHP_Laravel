@@ -45,7 +45,8 @@
         <input type="text" value="{{$customer->address->COUNTRY}}" name="COUNTRY" class="form-control">
     </div>
         <input type="hidden" value="{{$customer->address->id_ADDRESS}}" name="id_ADDRESS">
-    <input type="hidden" value="{{$customer->id_CUSTOMER}}" name="id_CUSTOMER">
+        <input type="hidden" value="{{$customer->id_CUSTOMER}}" name="id_c">
+        <input type="hidden" value="{{$user->id}}" name="id_USER">
     <button type="submit" class="btn btn-light">Submit</button>
 </form>
 </div>

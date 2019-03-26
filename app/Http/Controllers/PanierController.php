@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Command;
 use App\Product;
+use App\User;
+use App\Address;
+use Illuminate\Support\Facades\Auth;
 
 class PanierController extends Controller
 {
@@ -48,6 +51,9 @@ class PanierController extends Controller
 
     public function commander(Request $request)
     {
+        $user = User::find(auth::id());
+        // dd($user);
+
         $command = new Command();
         $command->COMMAND_DATE = new \DateTime();
         $command->save();
