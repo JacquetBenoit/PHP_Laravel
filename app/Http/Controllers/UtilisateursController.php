@@ -8,6 +8,7 @@ use App\product;
 use App\Customer;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Address;
 
 class UtilisateursController extends Controller
 {
@@ -44,11 +45,26 @@ class UtilisateursController extends Controller
 
     public function edit (Request $request)
     {
-        dd($request);
         $id = Auth::id();
-        $user = user::find($id);
 
-        return view('frontOffice/monCompte', ['user' => $user]);
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'NAME' => 'required',
+            'FIRSTNAME' => 'required',
+            'STREET1' => 'required',
+            'POSTCODE' => 'required',
+            'TOWN' => 'required',
+            'COUNTRY' => 'required',
+        ]);
+
+        $customer = Customer::updateOrCreate([],$request->all());
+
+        $user = User::updateOrCreate(['id'=>$id],$request->all());
+
+        Address::updateOrCreate([],$request->all());
+
+        return view('frontOffice/monCompte', ['user' => $user, 'customer' => $customer]);
     }
 
 
