@@ -7,6 +7,7 @@ use App\product;
 use App\Customer;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Address;
 
 class UtilisateursController extends Controller
 {
@@ -25,8 +26,9 @@ class UtilisateursController extends Controller
     {
         $id = Auth::id();
         $user = user::find($id);
-        $customer = customer::where('id_USER', $id)->first();
-
+        $customer = Customer::firstOrCreate(['id_USER' => $id]);
+        Address::firstOrcreate(['id_CUSTOMER' => $customer->id_CUSTOMER]);
+        // $customer = customer::where('id_USER', $id)->first();
 
         return view('frontOffice/monCompte', ['user' => $user, 'customer' => $customer]);
     }
@@ -43,11 +45,26 @@ class UtilisateursController extends Controller
 
     public function edit (Request $request)
     {
-        dd($request);
         $id = Auth::id();
-        $user = user::find($id);
 
-        return view('frontOffice/monCompte', ['user' => $user]);
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'NAME' => 'required',
+            'FIRSTNAME' => 'required',
+            'STREET1' => 'required',
+            'POSTCODE' => 'required',
+            'TOWN' => 'required',
+            'COUNTRY' => 'required',
+        ]);
+
+        $customer = Customer::updateOrCreate(['id_CUSTOMER'=> $request->input('id_c')],$request->all());
+
+        $user = User::updateOrCreate(['id'=>$id],$request->all());
+
+        Address::updateOrCreate(['id_ADDRESS'=>$request->id_ADDRESS],$request->all());
+
+        return view('frontOffice/monCompte', ['user' => $user, 'customer' => $customer]);
     }
 
 

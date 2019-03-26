@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Command;
 use App\Product;
+use App\User;
+use App\Customer;
+use App\Address;
+use Illuminate\Support\Facades\Auth;
 
 class PanierController extends Controller
 {
@@ -48,8 +52,21 @@ class PanierController extends Controller
 
     public function commander(Request $request)
     {
+        $user = User::find(auth::id());
+        $customer = Customer::where('id_USER', $user->id)->first();
+        
+       if(!$customer){
+            return redirect(route('monCompte'))->with('status', 'Veuillez fournir vos informations pour passer commande!');
+       }
+       else {
+        
+        if($customer->NAME == null || $customer->Address->STREET1 == null || $customer->Address->POSTCODE == null || $customer->Address->TOWN == null || $customer->Address->COUNTRY == null){
+            return redirect(route('monCompte'))->with('status', 'Veuillez fournir vos informations pour passer commande !');
+        }
+
         $command = new Command();
         $command->COMMAND_DATE = new \DateTime();
+        $command->id_CUSTOMER = $user->Customer->id_CUSTOMER;
         $command->save();
 
         foreach ($request->session()->get('product', []) as $product)
@@ -59,5 +76,5 @@ class PanierController extends Controller
         $request->session()->forget('product');
         return redirect(route('panier'))->with('status', 'Votre commande est validée!');
     }
-
+    }
 }
