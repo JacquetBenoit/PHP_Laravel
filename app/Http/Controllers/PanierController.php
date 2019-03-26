@@ -8,7 +8,6 @@ use App\Product;
 use App\User;
 use App\Customer;
 use App\Address;
-use Illuminate\Support\Facades\Auth;
 
 class PanierController extends Controller
 {
