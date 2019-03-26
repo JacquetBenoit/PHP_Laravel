@@ -19,7 +19,10 @@
             @endforeach
         </ul>
     </div>
-    @endif  
+    @endif
+    <div class="d-flex justify-content-center">
+    <a class="btn btn-light" href="{{route('commandes')}}">Mes commandes</a>  
+    </div>
 <form method="POST" action="{{route('editCompte')}}">
     @csrf
     <div class="form-group">
