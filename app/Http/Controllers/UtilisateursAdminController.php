@@ -1,12 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
+use \App\Http\Middleware\IsAdmin;
 use Illuminate\Http\Request;
 use App\Customer;
 
 class UtilisateursAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function gestionUtilisateurs()
     {
         $customers = Customer::all()->sortBy('id_CUSTOMER');

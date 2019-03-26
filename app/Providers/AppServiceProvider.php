@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use function foo\func;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 

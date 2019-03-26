@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Promotion;
 use App\product;
 
 class PromoAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function gestionPromos()
     {
         $promo = Promotion::all()

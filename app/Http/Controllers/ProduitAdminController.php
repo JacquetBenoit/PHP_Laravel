@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Http\Controllers\PDO;
 
 class ProduitAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function gestionProduits()
     {
         $products = Product::all()
