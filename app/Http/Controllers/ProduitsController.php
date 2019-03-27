@@ -16,6 +16,10 @@ class ProduitsController extends Controller
 
             $products = Product::all()
                 ->sortBy('PRICE');
+        } else if($check === 'sort-by-cat'){
+            $products = Product::all()
+                ->sortBy('id_CATEGORY');
+
         } else {
 
             $products = Product::all()
