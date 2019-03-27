@@ -70,7 +70,9 @@ class PanierController extends Controller
 
         foreach ($request->session()->get('product', []) as $product)
         {
-            $command->products()->attach($product['product'], ['QUANTITY'=>$product['quantity']]);
+;            $command->products()->attach($product['product'], ['QUANTITY'=>$product['quantity']]);
+            $product['product']->STOCK = $product['product']->STOCK - $product['quantity'];
+            $product['product']->save();
         }
         $request->session()->forget('product');
         return redirect(route('panier'))->with('status', 'Votre commande est validée!');
