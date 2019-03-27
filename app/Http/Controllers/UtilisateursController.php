@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Command;
 use App\product;
@@ -41,7 +40,10 @@ class UtilisateursController extends Controller
 
     public function commande()
     {
-        return view('frontOffice/commandes');
+        $id = Auth::id();
+        $customer = Customer::where('id_USER', $id)->first();
+        $command = Command::all()->where('id_CUSTOMER', $customer->id_CUSTOMER);
+        return view('frontOffice/commandes', ['command'=>$command]);
     }
 
     public function edit (Request $request)
