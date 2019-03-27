@@ -49,8 +49,9 @@ class ProduitAdminController extends Controller
 
     public function destroy($id)
     {
-        $produit = Product::where('id_PRODUCT', $id);
-        $produit->delete();
+        $produit = Product::where('id_PRODUCT', $id)->first();
+        $produit->is_ACTIVE = 0;
+        $produit->save();
         return redirect()->route('gestionProduits');
     }
 
