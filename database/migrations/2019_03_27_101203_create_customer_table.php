@@ -15,8 +15,8 @@ class CreateCustomerTable extends Migration {
 		Schema::create('customer', function(Blueprint $table)
 		{
 			$table->integer('id_CUSTOMER', true);
-			$table->string('NAME', 45);
-			$table->string('FIRSTNAME', 45);
+			$table->string('NAME', 45)->nullable();
+			$table->string('FIRSTNAME', 45)->nullable();
 			$table->integer('id_USER')->index('id_USER');
 		});
 	}
