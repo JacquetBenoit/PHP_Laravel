@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Command;
 use App\product;
@@ -10,7 +9,10 @@ use App\Promotion;
 
 class CommandesAdminController extends Controller
 {
-   
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function gestionCommandes()
     {
         $command = Command::all()

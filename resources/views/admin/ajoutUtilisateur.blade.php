@@ -22,7 +22,7 @@
   @csrf
   <div class="form-group">
     <label for="descrition">First name</label>
-  <input value="{{$customer->FIRSTNAME}}" name="FIRSTNAME" type="text" class="form-control" id="firstname" placeholder="Enter First Name">
+    <input value="{{$customer->FIRSTNAME}}" name="FIRSTNAME" type="text" class="form-control" id="firstname" placeholder="Enter First Name">
   </div>
   <div class="form-group">
     <label for="id_categorie">Name</label>
