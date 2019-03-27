@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use \App\Http\Middleware\IsAdmin;
 use Illuminate\Http\Request;
 use App\Customer;
+use App\User;
 
 class UtilisateursAdminController extends Controller
 {
@@ -29,11 +30,10 @@ class UtilisateursAdminController extends Controller
         $request->validate([
             'NAME' => 'required',
             'FIRSTNAME' => 'required',
-            'EMAIL' => 'required',
-            'PASSWORD' => 'required'
+            'email' => 'required',
         ]);
-        
-        Customer::updateOrCreate(['id_CUSTOMER'=>$request->input('id')],$request->all());
+        Customer::updateOrCreate(['id_USER'=>$request->input('id')],$request->all());
+        User::updateOrCreate(['id'=>$request->input('id')],$request->all());
 
         return redirect()->route('gestionUtilisateurs');
     } 

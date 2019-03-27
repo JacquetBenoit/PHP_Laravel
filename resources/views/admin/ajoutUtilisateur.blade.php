@@ -30,14 +30,18 @@
   </div>
   <div class="form-group">
     <label for="id_promotion">Email</label>
-    <input value="{{$customer->EMAIL}}" name="EMAIL" type="email" class="form-control" id="email" placeholder="Enter Email">
+    <input value="{{$customer->User->email}}" name="email" type="email" class="form-control" id="email" placeholder="Enter Email">
   </div>
   <div class="form-group">
-    <label for="image">Password</label>
-    <input value="{{$customer->PASSWORD}}" name="PASSWORD" type="text" class="form-control" id="pwd" placeholder="Enter Password">
+    <label for="image">Adouber Admin ?<br>
+        <label for="oui">Oui
+    <input value="1" name="is_admin" type="radio" class="form-control" id="oui"></label>
+        <label for="non">Non
+    <input value="0" name="is_admin" type="radio" class="form-control" id="non"></label>
+      </label>
   </div>
   <button type="submit" class="btn btn-light">Submit</button>
-  <input type="hidden" name="id" value="{{$customer->id_CUSTOMER}}">
+  <input type="hidden" name="id" value="{{$customer->User->id}}">
 </form>
 </div>
 
