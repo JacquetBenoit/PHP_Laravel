@@ -12,6 +12,11 @@ use App\Address;
 class UtilisateursController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('admin')->only('monCompte');
+    }
+
     public function coordonnees()
     {
         return view('frontOffice/coordonnes');
