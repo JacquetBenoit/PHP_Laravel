@@ -10,7 +10,7 @@ class Product extends Model
 
     protected $primaryKey = 'id_PRODUCT';
 
-    protected $fillable = ['DESCRIPTION', 'id_CATEGORY', 'id_PROMOTION', 'IMAGE', 'NAME', 'PRICE', 'STOCK','WEIGHT'];
+    protected $fillable = ['DESCRIPTION', 'id_CATEGORY', 'id_PROMOTION', 'IMAGE', 'NAME', 'PRICE', 'STOCK','WEIGHT', 'is_ACTIVE'];
 
 
     public function category()

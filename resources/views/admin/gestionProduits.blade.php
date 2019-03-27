@@ -18,6 +18,7 @@
         <th scope="col">PRICE</th>
         <th scope="col">STOCK</th>
         <th scope="col">ACTIONS</th>
+        <th scope="col">is_ACTIVE</th>
       </tr>
     </thead>
     <tbody>
@@ -29,6 +30,11 @@
           <td>{{$product->STOCK}}</td>
           <td><a href="{{route('deleteProduit',['id'=>$product->id_PRODUCT])}}" class="btn btn-light" name="delete">DELETE</a>
           <a href="{{route('updateProduit', ['id'=>$product->id_PRODUCT])}}" class="btn btn-light" name="update">UPDATE</a></td>
+          <td>@if($product->is_ACTIVE == 1)
+                  {{'Produit actif'}}
+              @else {{'Produit non actif'}}
+              @endif
+              </td>
         </tr>       
 @endforeach
     </tbody>
