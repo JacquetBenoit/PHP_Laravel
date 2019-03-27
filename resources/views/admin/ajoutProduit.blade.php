@@ -52,6 +52,14 @@
     <label for="weight">WEIGHT</label>
     <input value="{{$produit->WEIGHT}}" name="WEIGHT" type="number" class="form-control" id="weight" placeholder="Enter WEIGHT">
   </div>
+  <div class="form-group">
+    <label for="is_actif">
+    @if($produit->is_ACTIVE == "1")Rendre non actif
+      <input value="0" name="is_ACTIVE" type="checkbox" class="form-control" id="is_actif" placeholder="is_actif">
+    @else Rendre actif
+      <input value="1" name="is_ACTIVE" type="checkbox" class="form-control" id="is_actif" placeholder="is_actif">
+    @endif</label>
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <input type="hidden" name="id" value="{{$produit->id_PRODUCT}}">
 </form>
