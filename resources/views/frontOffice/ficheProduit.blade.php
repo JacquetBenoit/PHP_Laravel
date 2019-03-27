@@ -11,15 +11,17 @@
     <div class="container-article">
 
         <!-- Affiche l'image de l'article -->
-        <div class="container-left">       		
+        <div class="container-left">
+            <div class="img">        		
             <img src="{{$product->IMAGE}}" alt="vegetables-images" class="image">
+            </div>
             {{$product->DESCRIPTION}}
         </div>
         
         <div class="container-right">
            <!-- Affiche le nom et le prix de l'article -->
             <h2>{{$product->NAME}}</h2>
-            <p>{{$product->PRICE}}cents</p>
+            <p>{{$product->PRICE/100}}€</p>
            
            <!-- Quantité -->
            <input type="number" name="quantity" value="1" min="0" max="{{$product->STOCK}}" required/>

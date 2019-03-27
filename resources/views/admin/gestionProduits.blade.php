@@ -24,7 +24,7 @@
     <tbody>
 @foreach ($products as $product)   
         <tr>
-          <td><img src="{{$product->IMAGE}}" alt="vegetables-images" class="image"></td>
+          <td><img src="{{$product->IMAGE}}" alt="vegetables-images" class="image_back"></td>
           <td>{{$product->NAME}}</td>
           <td>{{$product->PRICE}}cents</td>
           <td>{{$product->STOCK}}</td>

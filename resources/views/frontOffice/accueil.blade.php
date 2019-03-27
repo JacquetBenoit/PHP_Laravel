@@ -4,4 +4,6 @@
     
 @section('nomDuSite', 'Sneakers Store')
 
-@section('content', 'Accueil')
+@section('content')
+
+@endsection
