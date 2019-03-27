@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration {
 			$table->integer('id_CATEGORY')->index('id_CATEGORY');
 			$table->integer('id_PROMOTION')->nullable()->index('id_PROMOTION');
 			$table->string('IMAGE', 300);
+			$table->boolean('is_ACTIVE')->default(1);
 		});
 	}
 
