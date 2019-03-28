@@ -28,6 +28,7 @@
          {{$produit->pivot->QUANTITY}}
      @endforeach
      </td>
+      </tr>
        
    @endforeach
 @endsection
