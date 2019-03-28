@@ -6,6 +6,7 @@ use \App\Http\Middleware\IsAdmin;
 use Illuminate\Http\Request;
 use App\Customer;
 use App\User;
+use App\Command;
 
 class UtilisateursAdminController extends Controller
 {
@@ -54,5 +55,13 @@ class UtilisateursAdminController extends Controller
         $produit = Customer::where('id_CUSTOMER', $id);
         $produit -> delete();
         return redirect()->route('gestionUtilisateurs');
-    }    
+    }
+
+    public function liste($id)
+    {
+        $customers = Customer::all()->sortBy('id_CUSTOMER');
+        $commands = Command::all()->where('id_CUSTOMER', $id);
+
+        return view('admin/gestionDesUtilisateurs', ['customers'=>$customers, 'commands'=>$commands]);
+    }
 }

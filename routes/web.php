@@ -91,6 +91,7 @@ route::delete('/gestion-utilisateurs/{id}/delete', 'UtilisateursAdminController@
 route::get('/edition-produit/{id}', 'ProduitAdminController@update')->name('updateProduit');
 
 route::get('/edition-utilisateur/{id}', 'UtilisateursAdminController@update')->name('updateUtilisateur');
+route::get('/edition-utilisateur-list/{id}', 'UtilisateursAdminController@liste')->name('listCommand');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

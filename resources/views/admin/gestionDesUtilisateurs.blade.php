@@ -7,6 +7,38 @@
 @endsection
 
 @section('content-two')
+    @if(isset($commands))
+        <h2>{{"Client : " . $commands['0']->customer->NAME}}</h2>
+        @foreach($commands as $command)
+            @php $total = 0; @endphp
+            <h4>{{'Commande num : ' . $command->id_ORDER}}</h4>
+            <br>
+            @foreach($command->products as $produit)
+                @php $prixProduit = $produit['PRICE']; @endphp
+                {{"Articles commandés : " . $produit['NAME'] . "->"}}
+                {{"Quantité : " . $produit->pivot->QUANTITY}}<br>
+                @if($produit->id_PROMOTION != '0' && $produit->id_PROMOTION != '')
+                    {{"promo sur le produit : " . $produit->id_PROMOTION}}
+
+                    @php
+                    $prixProduit -= $produit->Promotion->VALUE;
+                    $prixProduit -= $produit['PRICE']*$produit->Promotion->PERCENT/100;
+                    @endphp
+                @endif
+
+                 @php   $total += $prixProduit; @endphp
+                <br>
+            @endforeach
+            {{'Total de la commande : ' . $total . " €"}}
+            <br><br>
+        @endforeach
+
+    @endif
+
+
+
+
+
 <div class="d-flex justify-content-center">
   <a class="btn btn-light" href="{{route('ajoutUtilisateur')}}">AJOUTER UN UTILISATEUR</a>
 </div>
@@ -32,6 +64,7 @@
           <a href="{{route('updateUtilisateur', ['id'=>$customer->id_CUSTOMER])}}" class="btn btn-light" name="update">UPDATE</a></td>
             <td>@if($customer->User->is_admin == 1){{'Admin'}}
                 @else{{'Client'}}@endif</td>
+          <td><a href="{{route('listCommand', ['id'=>$customer->id_CUSTOMER])}}" class="btn btn-light" name="command">Listes des commandes</a></td></td>
         </tr>       
 @endforeach
     </tbody>
