@@ -22,10 +22,12 @@
    <td>{{$item->LIVRAISON_DATE}}</td>
    <td>@foreach ($item->products as $produit)
        {{$produit->NAME}}
+           <br>
    @endforeach
    </td>
    <td>@foreach ($item->products as $produit)
          {{$produit->pivot->QUANTITY}}
+           <br>
      @endforeach
      </td>
       </tr>
