@@ -26,7 +26,7 @@
         <tr>
           <td>{{$customer->id_CUSTOMER}}</td>
           <td>{{$customer->FIRSTNAME}}</td>
-          <td>{{$customer->User->name}}</td>
+          <td>{{$customer->Name}}</td>
           <td>{{$customer->User->email}}</td>
           <td><a href="{{route('deleteUtilisateur',['id'=>$customer->id_CUSTOMER])}}" class="btn btn-light" name="delete">DELETE</a>
           <a href="{{route('updateUtilisateur', ['id'=>$customer->id_CUSTOMER])}}" class="btn btn-light" name="update">UPDATE</a></td>
