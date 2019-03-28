@@ -38,7 +38,7 @@ class PanierController extends Controller
 
     public function deletePanier(Request $request)
     {
-        $request->session()->flush();
+        $request->session()->forget('product');
         return redirect(route('panier'));
     }
 
