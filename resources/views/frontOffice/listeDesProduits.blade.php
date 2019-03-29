@@ -31,6 +31,15 @@
                          <div class="container-left">
                           {{$product->NAME}}
                           {{$product->category->NAME}}
+                             <br>
+                             @if($product->id_PROMOTION != "" && $product->id_PROMOTION != 0)
+                                 @if ($product->Promotion->VALUE != "")
+                                     {{"Réduction : -" . $product->Promotion->VALUE . "€ sur le produit"}}
+                                 @endif
+                                 @if ($product->Promotion->PERCENT != "")
+                                     {{"Réduction : -" . $product->Promotion->PERCENT . "% sur le produit"}}
+                                 @endif
+                             @endif
                          <a href="{{route('ficheProduit', ['id'=>$product->NAME])}}">
                            <div class="img">  
                               <img src="{{$product->IMAGE}}" alt="vegetables-images" class="image">
@@ -40,7 +49,19 @@
 
                          <div class="container-right">
                             <!-- Affiche le nom et le prix de l'article -->
-                            {{$product->PRICE/100}}€
+                         @if($product->id_PROMOTION != ""&& $product->id_PROMOTION != 0)
+                             @if ($product->Promotion->VALUE != "")
+                                     <br>
+                                 {{$product->PRICE/100-$product->Promotion->VALUE}}€
+                             @endif
+                             @if ($product->Promotion->PERCENT != "")
+                                     <br>
+                                 @php $reduct = $product->PRICE/100 * $product->Promotion->PERCENT/100 @endphp
+                                     {{$product->PRICE/100-$reduct}}€
+                             @endif
+                         @else
+                             {{$product->PRICE/100}}€
+                         @endif
 
                             <!-- Quantité -->
                          <input type="number" name="quantity" value="1" min="0" max="{{$product->STOCK}}" required/>
