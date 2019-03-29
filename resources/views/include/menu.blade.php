@@ -2,6 +2,7 @@
         <div class="links">
             <a href="{{route('accueil') }}">Accueil</a>
             <a href="{{route('listeProduits', 'check') }}">Produits</a>
+            <a href="{{route('categories') }}">Catégories</a>
             <a href="{{route('monCompte') }}">Mon compte</a>
             <a href="{{route('panier') }}"><i class="fal fa-shopping-cart"></i></a>
             @if(Auth::user() && Auth::user() -> is_admin == true)

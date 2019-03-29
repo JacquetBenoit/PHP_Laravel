@@ -29,10 +29,10 @@ class UtilisateursController extends Controller
 
     public function monCompte()
     {
-        $id = Auth::id();
-        $user = user::find($id);
-        $customer = Customer::firstOrCreate(['id_USER' => $id]);
-        Address::firstOrcreate(['id_CUSTOMER' => $customer->id_CUSTOMER]);
+        $id = Auth::id(); // Récupère l'ID de l'utilisateur connecté
+        $user = user::find($id); // Récupère l'utilisateur correspondant à cet ID
+        $customer = Customer::firstOrCreate(['id_USER' => $id]); // Récupérer le customer qui a l'ID de l'utilsateur ou si il n'existe pas, va créer cet utilisateur
+        Address::firstOrcreate(['id_CUSTOMER' => $customer->id_CUSTOMER]); // De même que précédemment
         // $customer = customer::where('id_USER', $id)->first();
 
         return view('frontOffice/monCompte', ['user' => $user, 'customer' => $customer]);

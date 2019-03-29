@@ -31,10 +31,10 @@ class ProduitsController extends Controller
 
 // -------------------- fiche produit --------------------------------    
 
-    public function ficheProduit($id)
+    public function ficheProduit($id, Request $request)
     {
         $product = Product::where('id_PRODUCT', '=', $id)->first();
-
+        $request->session()->put('lastProductVisit', $id);
         return view('frontOffice/ficheProduit', ['product' => $product]);
     }
 

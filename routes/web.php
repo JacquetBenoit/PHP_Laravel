@@ -23,6 +23,8 @@ Route::get('/', 'StatiquesController@accueil')->name('accueil');
 
 Route::get('/listeProduits/{check}', 'ProduitsController@listeProduits')->name('listeProduits');
 
+Route::get('/categories', 'CategoriesController@categories')->name('categories');
+
 Route::get('/panier', 'PanierController@panier')->name('panier');
 
 Route::get('/ficheProduit/{id}', 'ProduitsController@ficheProduit')->name('ficheProduit');
