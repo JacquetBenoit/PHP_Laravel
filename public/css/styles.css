@@ -38,7 +38,7 @@ html, body {
 .links > a {
     color: #636b6f;
     padding: 0 25px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: .1rem;
     text-decoration: none;
@@ -66,18 +66,26 @@ html, body {
 }*/
 
 /* -- HEADER -- */
-header {
-	margin: 0 0 5% 0;
+header .container-menu-logo {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-h1 {
-	text-align: center;
+.container-menu {
+    margin: auto;
 }
-header p{
-	text-align: center;
+header .container-menu-logo .container-logo h1 {
+    font-size: 1.3rem;
 }
-header p span{
+header .container-menu-logo .container-logo p {
+    line-height: 1;
+    margin: 0;
+}
+header .container-menu-logo .container-logo p span{
 	font-family: 'sneakersregular';
-	font-size: 6em;
+	font-size: 8em;
 	margin: auto;
 	color: slategrey;
 }

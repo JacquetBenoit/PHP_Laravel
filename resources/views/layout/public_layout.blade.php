@@ -12,6 +12,7 @@
         <!-- Styles -->
         <link href="{{asset('css/resetCSS.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
  
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -68,11 +69,14 @@
             </div>
         </div>
     </nav>
-
-    <p><span>w</span></p>
-    <h1>SNEAKERS STORE</h1>
-    @include('include/menu')
-</header>   
+    <div class="container-menu-logo">
+        <div class="container-logo">
+            <p><span>w</span></p>
+            <h1>SNEAKERS STORE</h1>
+        </div>
+        @include('include/menu')
+    </div>
+</header>
 <body>
     <div class="full-height">      
         @yield('content')
