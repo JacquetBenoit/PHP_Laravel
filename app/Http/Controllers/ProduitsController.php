@@ -33,7 +33,7 @@ class ProduitsController extends Controller
 
     public function ficheProduit($id)
     {
-        $product = Product::where('NAME', '=', $id)->first();
+        $product = Product::where('id_PRODUCT', '=', $id)->first();
 
         return view('frontOffice/ficheProduit', ['product' => $product]);
     }

@@ -40,7 +40,7 @@
                                      {{"Réduction : -" . $product->Promotion->PERCENT . "% sur le produit"}}
                                  @endif
                              @endif
-                         <a href="{{route('ficheProduit', ['id'=>$product->NAME])}}">
+                         <a href="{{route('ficheProduit', ['id'=>$product->id_PRODUCT])}}">
                            <div class="img">  
                               <img src="{{$product->IMAGE}}" alt="vegetables-images" class="image">
                            </div> 
