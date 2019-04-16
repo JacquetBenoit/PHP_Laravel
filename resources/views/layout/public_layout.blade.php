@@ -14,8 +14,11 @@
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
- 
-        <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jcarousel/jquery.jcarousel.js"></script>
+        <script type="text/javascript" src="/js/jcarousel/modernizr.js"></script>
+        <script type="text/javascript" src="/js/jcarousel/jcarousel.transitions.js"></script>
     </head>
 <!-- HEADER -->
 <header>
@@ -81,5 +84,6 @@
     <div class="full-height">      
         @yield('content')
     </div>
+    <script src="/js/script.js"></script>
 </body>
 </html>
